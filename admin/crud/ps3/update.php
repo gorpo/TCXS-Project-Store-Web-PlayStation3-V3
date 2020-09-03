@@ -130,7 +130,7 @@ if (!empty($_POST)) {
 if (!empty($_POST['link1'])) {
             $link1 = $_POST['link1'];
         } else {
-            $link1 = 'nao_inserido';
+            $link1 = '---';
         }
 
 
@@ -138,7 +138,7 @@ if (!empty($_POST['link1'])) {
 if (!empty($_POST['link2'])) {
             $link2 = $_POST['link2'];
         } else {
-            $link2 = 'nao_inserido';
+            $link2 = '---';
         }
 
 
@@ -146,7 +146,7 @@ if (!empty($_POST['link2'])) {
 if (!empty($_POST['link3'])) {
             $link3 = $_POST['link3'];
         } else {
-            $link3 = 'nao_inserido';
+            $link3 = '---';
         }
 
 
@@ -154,7 +154,7 @@ if (!empty($_POST['link3'])) {
 if (!empty($_POST['link4'])) {
             $link4 = $_POST['link4'];
         } else {
-            $link4 = 'nao_inserido';
+            $link4 = '---';
         }
 
 
@@ -162,7 +162,7 @@ if (!empty($_POST['link4'])) {
 if (!empty($_POST['link5'])) {
             $link5 = $_POST['link5'];
         } else {
-            $link5 = 'nao_inserido';
+            $link5 = '---';
         }
 
 
@@ -170,7 +170,7 @@ if (!empty($_POST['link5'])) {
 if (!empty($_POST['link6'])) {
             $link6 = $_POST['link6'];
         } else {
-            $link6 = 'nao_inserido';
+            $link6 = '---';
         }
 
 
@@ -178,7 +178,7 @@ if (!empty($_POST['link6'])) {
 if (!empty($_POST['link7'])) {
             $link7 = $_POST['link7'];
         } else {
-            $link7 = 'nao_inserido';
+            $link7 = '---';
         }
 
 
@@ -186,7 +186,7 @@ if (!empty($_POST['link7'])) {
 if (!empty($_POST['link8'])) {
             $link8 = $_POST['link8'];
         } else {
-            $link8 = 'nao_inserido';
+            $link8 = '---';
         }
 
 
@@ -194,7 +194,7 @@ if (!empty($_POST['link8'])) {
 if (!empty($_POST['link9'])) {
             $link9 = $_POST['link9'];
         } else {
-            $link9 = 'nao_inserido';
+            $link9 = '---';
         }
 
 
@@ -202,7 +202,7 @@ if (!empty($_POST['link9'])) {
 if (!empty($_POST['link10'])) {
             $link10 = $_POST['link10'];
         } else {
-            $link10 = 'nao_inserido';
+            $link10 = '---';
         }
 
 
@@ -210,7 +210,7 @@ if (!empty($_POST['link10'])) {
 if (!empty($_POST['link11'])) {
             $link11 = $_POST['link11'];
         } else {
-            $link11 = 'nao_inserido';
+            $link11 = '---';
         }
 
 
@@ -218,7 +218,7 @@ if (!empty($_POST['link11'])) {
 if (!empty($_POST['link12'])) {
             $link12 = $_POST['link12'];
         } else {
-            $link12 = 'nao_inserido';
+            $link12 = '---';
         }
 
 
@@ -226,7 +226,7 @@ if (!empty($_POST['link12'])) {
 if (!empty($_POST['link13'])) {
             $link13 = $_POST['link13'];
         } else {
-            $link13 = 'nao_inserido';
+            $link13 = '---';
         }
 
 
@@ -234,7 +234,7 @@ if (!empty($_POST['link13'])) {
 if (!empty($_POST['link14'])) {
             $link14 = $_POST['link14'];
         } else {
-            $link14 = 'nao_inserido';
+            $link14 = '---';
         }
 
 
@@ -242,83 +242,83 @@ if (!empty($_POST['link14'])) {
 if (!empty($_POST['link15'])) {
             $link15 = $_POST['link15'];
         } else {
-            $link15 = 'nao_inserido';
+            $link15 = '---';
         }
 
 if (!empty($_POST['link16'])) {
             $link16 = $_POST['link16'];
         } else {
-            $link16 = 'nao_inserido';
+            $link16 = '---';
         } 
 if (!empty($_POST['link17'])) {
             $link17 = $_POST['link17'];
         } else {
-            $link17 = 'nao_inserido';
+            $link17 = '---';
         } 
 if (!empty($_POST['link18'])) {
             $link18 = $_POST['link18'];
         } else {
-            $link18 = 'nao_inserido';
+            $link18 = '---';
         } 
 if (!empty($_POST['link19'])) {
             $link19 = $_POST['link19'];
         } else {
-            $link19 = 'nao_inserido';
+            $link19 = '---';
         } 
 if (!empty($_POST['link20'])) {
             $link20 = $_POST['link20'];
         } else {
-            $link20 = 'nao_inserido';
+            $link20 = '---';
         } 
 if (!empty($_POST['link21'])) {
             $link21 = $_POST['link21'];
         } else {
-            $link21 = 'nao_inserido';
+            $link21 = '---';
         } 
 if (!empty($_POST['link22'])) {
             $link22 = $_POST['link22'];
         } else {
-            $link22 = 'nao_inserido';
+            $link22 = '---';
         } 
 if (!empty($_POST['link23'])) {
             $link23 = $_POST['link23'];
         } else {
-            $link23 = 'nao_inserido';
+            $link23 = '---';
         } 
 if (!empty($_POST['link24'])) {
             $link24 = $_POST['link24'];
         } else {
-            $link24 = 'nao_inserido';
+            $link24 = '---';
         } 
 if (!empty($_POST['link25'])) {
             $link25 = $_POST['link25'];
         } else {
-            $link25 = 'nao_inserido';
+            $link25 = '---';
         } 
 if (!empty($_POST['link26'])) {
             $link26 = $_POST['link26'];
         } else {
-            $link26 = 'nao_inserido';
+            $link26 = '---';
         } 
 if (!empty($_POST['link27'])) {
             $link27 = $_POST['link27'];
         } else {
-            $link27 = 'nao_inserido';
+            $link27 = '---';
         } 
 if (!empty($_POST['link28'])) {
             $link28 = $_POST['link28'];
         } else {
-            $link28 = 'nao_inserido';
+            $link28 = '---';
         } 
 if (!empty($_POST['link29'])) {
             $link29 = $_POST['link29'];
         } else {
-            $link29 = 'nao_inserido';
+            $link29 = '---';
         } 
 if (!empty($_POST['link30'])) {
             $link30 = $_POST['link30'];
         } else {
-            $link30 = 'nao_inserido';
+            $link30 = '---';
         } 
 
     // update data somente desta forma pode ser passado ao PDO o NOW() para dar update no mysql(data)
