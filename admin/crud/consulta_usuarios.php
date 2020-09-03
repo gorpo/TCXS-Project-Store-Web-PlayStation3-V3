@@ -103,7 +103,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $usuario != "") {
  <div class="barraCadastro">
   <h3 class="tituloRed">Sistema de consulta | Verificar Vazamentos | Insira Usuario.</h3>
 
-                    <form action="?act=save" method="POST" name="form1" class="form-horizontal" >
+                    <form action="?act=save" method="POST" name="form1" class="form-horizontal" autocomplete="off">
                       <input type="hidden" name="id" value="<?php
             // Preenche o id no campo id com um valor "value"
             echo (isset($id) && ($id != null || $id != "")) ? $id : '';

@@ -157,7 +157,7 @@ if (!empty($_POST)) {
 
 <div class="barraBase">
     <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['titulo']; ?><br>PlayStation PS1<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
-    <form class="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post">
+    <form class="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post"  autocomplete="off">
 
 
         <!-- =====   TITULO ======   -->

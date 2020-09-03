@@ -185,7 +185,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "" && $usuari
 ?>
 
 
-<form action="?act=save" method="POST" name="form1" class="form-horizontal" >
+<form action="?act=save" method="POST" name="form1" class="form-horizontal" autocomplete="off">
     
 
 

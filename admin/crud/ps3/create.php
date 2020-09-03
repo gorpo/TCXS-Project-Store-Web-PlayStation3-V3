@@ -355,7 +355,7 @@ if (!empty($_POST['link30'])) {
 
 <div class="barraBase">
   <h3 class="tituloRed"> Cadastrar PlayStation PS3 na Database </h3>
-        <form class="form-horizontal" action="create.php" method="post">
+        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off">
         
 
 

@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="barraBase">
   <h3 class="tituloRed"> Cadastrar PlayStation PS1 na Database </h3>
-        <form class="form-horizontal" action="create.php" method="post">
+        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off">
            <!-- <h3 class="tituloRed"> Adicionar Jogo PS1 </h3> -->
 
 

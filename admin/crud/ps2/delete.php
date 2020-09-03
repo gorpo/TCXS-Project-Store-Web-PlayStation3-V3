@@ -94,7 +94,7 @@ database::desconectar();
 
           <div class="barraBase">
             <h3 class="tituloRed">[WARNING]<br>Deletar: <?php echo $data['titulo']; ?><br>PlayStation PS2<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
-        <form class="form-horizontal" action="delete.php" method="post">
+        <form class="form-horizontal" action="delete.php" method="post"  autocomplete="off">
 
 
 

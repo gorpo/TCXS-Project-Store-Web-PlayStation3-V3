@@ -52,8 +52,8 @@ session_start();
     unset($_SESSION['nao_autenticado']);
   ?>
 
-    <form action="login.php" method="POST">
-    <input type="text" name="usuario" placeholder="Usuário"/><br>
+    <form action="login.php" method="POST" autocomplete="off">
+    <input type="text" name="usuario" autocomplete="off"  placeholder="Usuário"/><br>
     <input type="password" name="senha" placeholder="Senha"/>
     <br>
     <button type="submit" id="btnhome" type="button" class="btnlogar m-b-16 ">Entrar</button>
