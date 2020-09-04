@@ -76,6 +76,124 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: index.php");
     }
 }
+
+
+//---------------------------------------------------------------------------------------------------------------------
+//================== FUNÇÃO UPLOAD DE IMAGEM | REDIMENSIONAMENTO | MARCA DAGUA TCXS ===================================
+//--------------------------------------------------->>>
+// CAMINHO PARA SALVAR A IMAGEM | CAMINHO DA MARCA DAGUA
+$targetDir = "../../../loja/imagens/emuladores/"; 
+$watermarkImagePath = '../assets/images/watermark.png'; 
+// FUNÇAO RESPONSAVEL PELO REDIMENSINAMENTO 
+function resize_image($file, $w, $h, $crop=FALSE) {
+    list($width, $height) = getimagesize($file);
+    $r = $width / $height;
+    //-----ATENÇÃO --- ATENÇÃO -----ATENÇÃO --- ATENÇÃO-----ATENÇÃO --- ATENÇÃO-----ATENÇÃO --- ATENÇÃO
+    //REMOVER A LINHA ERRO REPORTING PARA VOLTAR VER ERROS DO PHP
+    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+    //---------------------------------------------------------->>
+    if ($crop) {
+        if ($width > $height) {
+            $width = ceil($width-($width*abs($r-$w/$h)));
+        } else {
+            $height = ceil($height-($height*abs($r-$w/$h)));
+        }
+        $newwidth = $w;
+        $newheight = $h;
+    } else {
+        if ($w/$h > $r) {
+            $newwidth = $h*$r;
+            $newheight = $h;
+        } else {
+            $newheight = $w/$r;
+            $newwidth = $w;
+        }
+    }
+
+    $src = imagecreatefromjpeg($file);
+    if (!$src){
+           $src= imagecreatefromstring(file_get_contents($file));
+        }
+
+
+
+
+    $dst = imagecreatetruecolor($newwidth, $newheight);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+    return $dst;
+}
+//SETA STATUS DA MENSAGEM PARA SABER SE SUBIU E RETORNA OS DADOS
+$statusMsg = ''; 
+if(isset($_POST["submit"])){ 
+    if(!empty($_FILES["file"]["name"])){ 
+        // Caminho de upload de arquivo
+        $fileName = basename($_FILES["file"]["name"]); 
+        $targetFilePath = $targetDir . $fileName; 
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION); 
+        // Permitir certos formatos de arquivo
+        $allowTypes = array('jpg','png','jpeg'); 
+        if(in_array($fileType, $allowTypes)){ 
+            // Upload file to the server 
+            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
+                // Carregue o carimbo e a foto para aplicar a marca d'água
+                //echo $targetFilePath;
+                 $im = resize_image($targetFilePath, 200, 200); 
+            
+                $watermarkImg = imagecreatefrompng($watermarkImagePath); 
+                switch($fileType){ 
+                    case 'jpg': 
+                        $im = imagecreatefromjpeg($targetFilePath); 
+                    case 'jpeg': 
+                        $im = imagecreatefromjpeg($targetFilePath); 
+                        break; 
+                    case 'png': 
+                        $im = imagecreatefrompng($targetFilePath); 
+                        break; 
+                    default: 
+                        $im = imagecreatefromjpeg($targetFilePath); 
+                } 
+                // SETA AS MARGENS PARA A MARCA DAGUA PODENDO REALINHAR ELA
+                $marge_right = 00; 
+                $marge_bottom = 00;                  
+                // PEGA O WIDHT E HEIGHT DA MARCA DAGUA
+                $sx = imagesx($watermarkImg); 
+                $sy = imagesy($watermarkImg);                 
+                // Copie a imagem da marca d'água em nossa foto usando os deslocamentos de margem e
+                // a largura da foto para calcular o posicionamento da marca d'água.
+                //redimensiona a imagem 
+                $im = imagescale($im,250,250);
+                imagecopy($im, $watermarkImg, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($watermarkImg), imagesy($watermarkImg)); 
+                // Salvar imagem e LIBERA A MEMORIA
+                imagepng($im, $targetFilePath); 
+                imagedestroy($im);      
+                if(file_exists($targetFilePath)){ 
+                    $statusMsg = "A imagem foi redimensionada e adicionada marca dagua com sucesso!"; 
+                }else{ 
+                    $statusMsg = "Upload da imagem falhou, tente novamete."; 
+                }  
+            }else{ 
+                $statusMsg = "Desculpe, ocorreu um erro ao enviar seu arquivo."; 
+            } 
+        }else{ 
+            $statusMsg = 'Desculpe, apenas arquivos JPG, JPEG e PNG podem fazer upload.'; 
+        } 
+    }else{ 
+        $statusMsg = 'Selecione um arquivo para fazer upload.'; 
+    } 
+}
+//---------------------------------------------------------------------------------------------------------------------
+
+// MOSTRA O STATUS DA IMAGEM | NOME DA IMAGEM | CAMINHO COMPLETO DA IMAGEM ----->>
+//echo $statusMsg;
+//if ($statusMsg){
+//  echo $fileName;
+//echo "<br><br><img src='$targetFilePath'>";
+//}
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+
 ?>
 
 
@@ -133,7 +251,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="barraBase">
   <h3 class="tituloRed"> Cadastrar Emuladores  na Database </h3>
-        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off">
+        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
            <!-- <h3 class="tituloRed"> Adicionar Jogo PSP </h3> -->
 
 
@@ -167,7 +285,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-          <!-- =====   descricao ======   -->
+          <!-- =====   CONTENT ID ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
                     <div class="control-group <?php echo !empty($content_idErro) ? 'error ' : ''; ?>">
                         <label class="titulo">Content_id EMULADORES </label>
@@ -182,19 +300,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div></div></div>
 
 
-          <!-- =====   IMAGEM ======   -->
+          <!-- =====   UPLOAD IMAGEM ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
-                    <div class="control-group <?php echo !empty($imagemErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Imagem EMULADORES </label>
-                        <div class="controls">
-                            <input class="input100" name="imagem" type="text" placeholder="Insira o nome da imagem"
-                                   value="<?php echo !empty($imagem) ? $imagem : ''; ?>">
-                            <?php if (!empty($imagemErro)): ?>
-                                <span class="text-danger"><?php echo $imagemErro; ?></span>
-                            <?php endif; ?>
-                        <span class="focus-input100"></span>
-            </span>
-          </div></div></div>
+                    <div class="control-group ">
+                        <label class="titulo">Upload de Imagem</label>
+                        <div class="controls  ">
+
+                          <?php 
+                            if (!$statusMsg){
+                             // exibiria a imagem da marca dagua 
+                            //echo "<div class='inputUploadImagem'>";
+                            //echo "<img src='../assets/images/watermark.png' >";
+                            //echo "</div>";
+                            }else{
+                              echo "<div class='inputUploadImagem'>";
+                              echo "<img src='$targetFilePath'>";
+                              echo "</div>";
+                            }
+                            ?>
+                            <div class="areaBotoesUpload">
+                               <!-- GAMBIARRA PARA TIRAR O TEXTO DO BTN UPLOAD E ALICAR CSS  --->
+                              <label  class="login100-form-btn m-b-16" for='selecao-arquivo'>Selecione uma imagem &#187;</label>
+                              <input id='selecao-arquivo' type='file'  name="file" >
+
+                            <input  class="login100-form-btn m-b-16" type="submit" name="submit" value="Upload"></div>
+                        <span class="focus-input100"></span></span></div></div></div>
+
+
+<!-- =====   IMAGEM | pega as infos da função de upload e retorna se o status esta True o nome da imagem para por na DB======   -->
+        <div class="wrap-input100 validate-input m-b-16" >
+            <div class="control-group <?php echo !empty($imagemErro) ? 'error ' : ''; ?>">
+                <label class="titulo">Imagem EMULADOR</label>
+                    <div class="controls">
+                      <input class="input100" name="imagem" type="text" placeholder="Insira o nome da imagem"
+                          value="<?php 
+                          if ($statusMsg){
+                                  echo $fileName;
+                                }else{
+                                  echo !empty($imagem) ? $imagem : '';
+                                }
+                           ?>">
+                          <?php if (!empty($imagemErro)): ?>
+                          <span class="text-danger"><?php echo $imagemErro; ?></span>
+                          <?php endif; ?>
+        <span class="focus-input100"></span></span></div></div></div>
 
 
                     

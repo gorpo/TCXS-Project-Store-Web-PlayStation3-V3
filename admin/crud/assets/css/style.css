@@ -439,6 +439,32 @@ ul {
   height: 40px;
   border-radius: 3px;
 }
+
+
+.areaBotoesUpload {
+  padding-left:2px;
+  width: 100%;
+  background: #e6e6e6;
+  height: auto;
+  border-radius: 3px;
+}
+
+/* INPUT PERSONALIZADO PARA UPLOAD DAS IMAGENZ */
+/* Esconde o input */
+input[type='file'] {
+  display: none
+}
+
+.inputUploadImagem {
+  padding-left:25px;
+  width: 100%;
+  background: #e6e6e6;
+  height: 250px;
+  border-radius: 0px;
+}
+
+
+
 .focus-input100 {
   display: block;
   position: absolute;

@@ -88,11 +88,14 @@ session_start();
   <b> Não vaze sua senha, seu ip esta armazenado e se outro ip logar com sua conta você será banido.</b>
 </div>
 
+<!--
+    <script>
+        writeEnvInfo();
+        ps3chk();
+    </script> 
 
-<script>
-    writeEnvInfo();
-    ps3chk();
-</script> 
+-->
+
   </body>
 </html>
 

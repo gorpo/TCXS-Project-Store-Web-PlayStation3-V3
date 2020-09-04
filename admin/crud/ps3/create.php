@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['imagem'])) {
             $imagem = $_POST['imagem'];
         } else {
-            $imagemErro = 'Por favor digite o imagem!';
+            $imagemErro = 'Por favor digite o nome imagem!';
             $validacao = False;
         }
 
@@ -91,7 +91,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (!empty($_POST['link1'])) {
             $link1 = $_POST['link1'];
         } else {
-            $link1 = '---';
+            //$link1 = '---';
+            $link1Erro = 'O primeiro link é sempre obrigatório, é necessário que tenha ao menos este link cadastrado!';
+            $validacao = False;
         }
 
 
@@ -99,6 +101,7 @@ if (!empty($_POST['link1'])) {
 if (!empty($_POST['link2'])) {
             $link2 = $_POST['link2'];
         } else {
+            $link2Erro = 'O link 2 não é obrigatório, mantenha o nome "---" intalterado caso não vá inserir link!';
             $link2 = '---';
         }
 
@@ -107,6 +110,7 @@ if (!empty($_POST['link2'])) {
 if (!empty($_POST['link3'])) {
             $link3 = $_POST['link3'];
         } else {
+            $link3Erro = 'O link 3 não é obrigatório, mantenha o nome "---" intalterado caso não vá inserir link!';
             $link3 = '---';
         }
 
@@ -115,173 +119,192 @@ if (!empty($_POST['link3'])) {
 if (!empty($_POST['link4'])) {
             $link4 = $_POST['link4'];
         } else {
+            $link4Erro = 'O link 4 não é obrigatório, mantenha o nome "---" intalterado caso não vá inserir link!';
             $link4 = '---';
         }
-
 
 
 if (!empty($_POST['link5'])) {
             $link5 = $_POST['link5'];
         } else {
+            $link5Erro = 'O link5  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link5!';
             $link5 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link6'])) {
             $link6 = $_POST['link6'];
         } else {
+            $link6Erro = 'O link6  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link6!';
             $link6 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link7'])) {
             $link7 = $_POST['link7'];
         } else {
+            $link7Erro = 'O link7  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link7!';
             $link7 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link8'])) {
             $link8 = $_POST['link8'];
         } else {
+            $link8Erro = 'O link8  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link8!';
             $link8 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link9'])) {
             $link9 = $_POST['link9'];
         } else {
+            $link9Erro = 'O link9  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link9!';
             $link9 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link10'])) {
             $link10 = $_POST['link10'];
         } else {
+            $link10Erro = 'O link10  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link10!';
             $link10 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link11'])) {
             $link11 = $_POST['link11'];
         } else {
+            $link11Erro = 'O link11  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link11!';
             $link11 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link12'])) {
             $link12 = $_POST['link12'];
         } else {
+            $link12Erro = 'O link12  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link12!';
             $link12 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link13'])) {
             $link13 = $_POST['link13'];
         } else {
+            $link13Erro = 'O link13  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link13!';
             $link13 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link14'])) {
             $link14 = $_POST['link14'];
         } else {
+            $link14Erro = 'O link14  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link14!';
             $link14 = '---';
         }
-
-
-
+        
 if (!empty($_POST['link15'])) {
             $link15 = $_POST['link15'];
         } else {
+            $link15Erro = 'O link15  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link15!';
             $link15 = '---';
         }
-
+        
 if (!empty($_POST['link16'])) {
             $link16 = $_POST['link16'];
         } else {
+            $link16Erro = 'O link16  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link16!';
             $link16 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link17'])) {
             $link17 = $_POST['link17'];
         } else {
+            $link17Erro = 'O link17  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link17!';
             $link17 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link18'])) {
             $link18 = $_POST['link18'];
         } else {
+            $link18Erro = 'O link18  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link18!';
             $link18 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link19'])) {
             $link19 = $_POST['link19'];
         } else {
+            $link19Erro = 'O link19  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link19!';
             $link19 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link20'])) {
             $link20 = $_POST['link20'];
         } else {
+            $link20Erro = 'O link20  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link20!';
             $link20 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link21'])) {
             $link21 = $_POST['link21'];
         } else {
+            $link21Erro = 'O link21  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link21!';
             $link21 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link22'])) {
             $link22 = $_POST['link22'];
         } else {
+            $link22Erro = 'O link22  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link22!';
             $link22 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link23'])) {
             $link23 = $_POST['link23'];
         } else {
+            $link23Erro = 'O link23  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link23!';
             $link23 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link24'])) {
             $link24 = $_POST['link24'];
         } else {
+            $link24Erro = 'O link24  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link24!';
             $link24 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link25'])) {
             $link25 = $_POST['link25'];
         } else {
+            $link25Erro = 'O link25  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link25!';
             $link25 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link26'])) {
             $link26 = $_POST['link26'];
         } else {
+            $link26Erro = 'O link26  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link26!';
             $link26 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link27'])) {
             $link27 = $_POST['link27'];
         } else {
+            $link27Erro = 'O link27  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link27!';
             $link27 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link28'])) {
             $link28 = $_POST['link28'];
         } else {
+            $link28Erro = 'O link28  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link28!';
             $link28 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link29'])) {
             $link29 = $_POST['link29'];
         } else {
+            $link29Erro = 'O link29  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link29!';
             $link29 = '---';
-        } 
+        }
+        
 if (!empty($_POST['link30'])) {
             $link30 = $_POST['link30'];
         } else {
+            $link30Erro = 'O link30  não é obrigatório, mantenha o nome --- intalterado caso não vá inserir link30!';
             $link30 = '---';
-        } 
-        
+        }
 
 
 
@@ -298,6 +321,125 @@ if (!empty($_POST['link30'])) {
         header("Location: index.php");
     }
 }
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+//================== FUNÇÃO UPLOAD DE IMAGEM | REDIMENSIONAMENTO | MARCA DAGUA TCXS ===================================
+//--------------------------------------------------->>>
+// CAMINHO PARA SALVAR A IMAGEM | CAMINHO DA MARCA DAGUA
+$targetDir = "../../../loja/imagens/ps3/"; 
+$watermarkImagePath = '../assets/images/watermark.png'; 
+// FUNÇAO RESPONSAVEL PELO REDIMENSINAMENTO 
+function resize_image($file, $w, $h, $crop=FALSE) {
+    list($width, $height) = getimagesize($file);
+    $r = $width / $height;
+    //-----ATENÇÃO --- ATENÇÃO -----ATENÇÃO --- ATENÇÃO-----ATENÇÃO --- ATENÇÃO-----ATENÇÃO --- ATENÇÃO
+    //REMOVER A LINHA ERRO REPORTING PARA VOLTAR VER ERROS DO PHP
+    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+    //---------------------------------------------------------->>
+    if ($crop) {
+        if ($width > $height) {
+            $width = ceil($width-($width*abs($r-$w/$h)));
+        } else {
+            $height = ceil($height-($height*abs($r-$w/$h)));
+        }
+        $newwidth = $w;
+        $newheight = $h;
+    } else {
+        if ($w/$h > $r) {
+            $newwidth = $h*$r;
+            $newheight = $h;
+        } else {
+            $newheight = $w/$r;
+            $newwidth = $w;
+        }
+    }
+
+    $src = imagecreatefromjpeg($file);
+    if (!$src){
+           $src= imagecreatefromstring(file_get_contents($file));
+        }
+
+
+
+
+    $dst = imagecreatetruecolor($newwidth, $newheight);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+    return $dst;
+}
+//SETA STATUS DA MENSAGEM PARA SABER SE SUBIU E RETORNA OS DADOS
+$statusMsg = ''; 
+if(isset($_POST["submit"])){ 
+    if(!empty($_FILES["file"]["name"])){ 
+        // Caminho de upload de arquivo
+        $fileName = basename($_FILES["file"]["name"]); 
+        $targetFilePath = $targetDir . $fileName; 
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION); 
+        // Permitir certos formatos de arquivo
+        $allowTypes = array('jpg','png','jpeg'); 
+        if(in_array($fileType, $allowTypes)){ 
+            // Upload file to the server 
+            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
+                // Carregue o carimbo e a foto para aplicar a marca d'água
+                //echo $targetFilePath;
+                 $im = resize_image($targetFilePath, 200, 200); 
+            
+                $watermarkImg = imagecreatefrompng($watermarkImagePath); 
+                switch($fileType){ 
+                    case 'jpg': 
+                        $im = imagecreatefromjpeg($targetFilePath); 
+                    case 'jpeg': 
+                        $im = imagecreatefromjpeg($targetFilePath); 
+                        break; 
+                    case 'png': 
+                        $im = imagecreatefrompng($targetFilePath); 
+                        break; 
+                    default: 
+                        $im = imagecreatefromjpeg($targetFilePath); 
+                } 
+                // SETA AS MARGENS PARA A MARCA DAGUA PODENDO REALINHAR ELA
+                $marge_right = 00; 
+                $marge_bottom = 00;                  
+                // PEGA O WIDHT E HEIGHT DA MARCA DAGUA
+                $sx = imagesx($watermarkImg); 
+                $sy = imagesy($watermarkImg);                 
+                // Copie a imagem da marca d'água em nossa foto usando os deslocamentos de margem e
+                // a largura da foto para calcular o posicionamento da marca d'água.
+                //redimensiona a imagem 
+                $im = imagescale($im,250,250);
+                imagecopy($im, $watermarkImg, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($watermarkImg), imagesy($watermarkImg)); 
+                // Salvar imagem e LIBERA A MEMORIA
+                imagepng($im, $targetFilePath); 
+                imagedestroy($im);      
+                if(file_exists($targetFilePath)){ 
+                    $statusMsg = "A imagem foi redimensionada e adicionada marca dagua com sucesso!"; 
+                }else{ 
+                    $statusMsg = "Upload da imagem falhou, tente novamete."; 
+                }  
+            }else{ 
+                $statusMsg = "Desculpe, ocorreu um erro ao enviar seu arquivo."; 
+            } 
+        }else{ 
+            $statusMsg = 'Desculpe, apenas arquivos JPG, JPEG e PNG podem fazer upload.'; 
+        } 
+    }else{ 
+        $statusMsg = 'Selecione um arquivo para fazer upload.'; 
+    } 
+}
+//---------------------------------------------------------------------------------------------------------------------
+
+// MOSTRA O STATUS DA IMAGEM | NOME DA IMAGEM | CAMINHO COMPLETO DA IMAGEM ----->>
+//echo $statusMsg;
+//if ($statusMsg){
+//  echo $fileName;
+//echo "<br><br><img src='$targetFilePath'>";
+//}
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+
 ?>
 
 
@@ -355,7 +497,7 @@ if (!empty($_POST['link30'])) {
 
 <div class="barraBase">
   <h3 class="tituloRed"> Cadastrar PlayStation PS3 na Database </h3>
-        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off">
+        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
         
 
 
@@ -404,20 +546,50 @@ if (!empty($_POST['link30'])) {
           </div></div></div>
 
 
-          <!-- =====   IMAGEM ======   -->
+          <!-- =====   UPLOAD IMAGEM ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
-                    <div class="control-group <?php echo !empty($imagemErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Imagem PS3</label>
-                        <div class="controls">
-                            <input class="input100" name="imagem" type="text" placeholder="Insira o nome da imagem"
-                                   value="<?php echo !empty($imagem) ? $imagem : ''; ?>">
-                            <?php if (!empty($imagemErro)): ?>
-                                <span class="text-danger"><?php echo $imagemErro; ?></span>
-                            <?php endif; ?>
-                        <span class="focus-input100"></span>
-            </span>
-          </div></div></div>
+                    <div class="control-group ">
+                        <label class="titulo">Upload de Imagem</label>
+                        <div class="controls  ">
 
+                          <?php 
+                            if (!$statusMsg){
+                             // exibiria a imagem da marca dagua 
+                            //echo "<div class='inputUploadImagem'>";
+                            //echo "<img src='../assets/images/watermark.png' >";
+                            //echo "</div>";
+                            }else{
+                              echo "<div class='inputUploadImagem'>";
+                              echo "<img src='$targetFilePath'>";
+                              echo "</div>";
+                            }
+                            ?>
+                            <div class="areaBotoesUpload">
+                               <!-- GAMBIARRA PARA TIRAR O TEXTO DO BTN UPLOAD E ALICAR CSS  --->
+                              <label  class="login100-form-btn m-b-16" for='selecao-arquivo'>Selecione uma imagem &#187;</label>
+                              <input id='selecao-arquivo' type='file'  name="file" >
+
+                            <input  class="login100-form-btn m-b-16" type="submit" name="submit" value="Upload"></div>
+                        <span class="focus-input100"></span></span></div></div></div>
+
+
+<!-- =====   IMAGEM | pega as infos da função de upload e retorna se o status esta True o nome da imagem para por na DB======   -->
+        <div class="wrap-input100 validate-input m-b-16" >
+            <div class="control-group <?php echo !empty($imagemErro) ? 'error ' : ''; ?>">
+                <label class="titulo">Imagem PS3</label>
+                    <div class="controls">
+                      <input class="input100" name="imagem" type="text" placeholder="Insira o nome da imagem"
+                          value="<?php 
+                          if ($statusMsg){
+                                  echo $fileName;
+                                }else{
+                                  echo !empty($imagem) ? $imagem : '';
+                                }
+                           ?>">
+                          <?php if (!empty($imagemErro)): ?>
+                          <span class="text-danger"><?php echo $imagemErro; ?></span>
+                          <?php endif; ?>
+        <span class="focus-input100"></span></span></div></div></div>
 
                     
 
@@ -433,6 +605,10 @@ if (!empty($_POST['link30'])) {
                 <span class="text-danger"><?php echo $link1Erro; ?></span>
                 <?php endif; ?>
 <span class="focus-input100"></span></span></div></div></div>   
+
+
+
+
 
 
 

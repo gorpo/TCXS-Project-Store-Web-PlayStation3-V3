@@ -1,9 +1,8 @@
 <?php 
 // Path configuration 
-$targetDir = ""; 
+$targetDir = "uploads"; 
 $watermarkImagePath = 'watermark.png'; 
  
-
 
 
 function resize_image($file, $w, $h, $crop=FALSE) {

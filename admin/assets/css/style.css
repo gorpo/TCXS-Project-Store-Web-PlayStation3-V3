@@ -43,6 +43,8 @@ background-size: 100%;
   width: 100%;
   z-index: 1;
 }
+
+
 .input100 {
   font-family: Raleway-SemiBold;
   font-size: 18px;
@@ -55,6 +57,12 @@ background-size: 100%;
   height: 40px;
   border-radius: 3px;
 }
+
+
+
+
+
+
 .focus-input100 {
   display: block;
   position: absolute;

@@ -58,7 +58,7 @@ if (!$_REQUEST["act"] && $_REQUEST["act"] != "mitsuky"){
                     <li class="tm-nav-item"><a href="../nao_logado.php" class="tm-nav-item-link tm-button ">PlayStation2</a></li>
                     <li class="tm-nav-item"><a href="../nao_logado.php" class="tm-nav-item-link tm-button active">PlayStation3</a></li>
                     <li class="tm-nav-item"><a href="../nao_logado.php" class="tm-nav-item-link tm-button">Emuladores</a></li>
-                    <li class="tm-nav-item"><a href="https://tcxsproject.com.br/doadores/" class="tm-nav-item-link tm-button">Guia para Membros</a></li>
+                    <li class="tm-nav-item"><a href="doadores/index.html" class="tm-nav-item-link tm-button">Guia para Membros</a></li>
                     <li class="tm-nav-item"><a href="https://tcxsproject.com.br/dev/ps3xploit.com/" class="tm-nav-item-link tm-button">PS3Xploit</a></li>
                 </ul>
             </nav>
