@@ -37,7 +37,15 @@ INSERT INTO `playstation_users` (`id`, `usuario`, `senha`, `nome`, `cadastro`,`n
 (5,'mste3dz', 'tcxsproject2020web', 'MsTe3dz', '2500-09-07 15:06:25','admin');
 
 
+--
+-- Estrutura da tabela `home informacoes`
+--
 
+CREATE TABLE `playstation_infos` (
+  `id` MEDIUMINT NOT NULL AUTO_INCREMENT,
+  `informacao` varchar(999) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Estrutura da tabela `jogos psp`

@@ -51,6 +51,7 @@
                 <ul class="list-menu">
                          <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
                         <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
+                        <li class="item-menu"> <a href="../infos/index.php" class="link-menu">PlayStation Infos</a></li>
                          <li class="item-menu"> <a href="index.php" class="link-menu ">PLAYSTATION PSP</a></li>
                          <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PLAYSTATION1</a></li>
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PLAYSTATION2</a></li>

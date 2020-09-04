@@ -10,7 +10,7 @@ if (null == $id) {
 } else {
     $pdo = Database::conectar();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM playstation_ps2 where id = ?";
+    $sql = "SELECT * FROM playstation_infos where id = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
     $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -36,7 +36,7 @@ if (null == $id) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-      <title>TCXS Project | INFO PS2</title>
+      <title>TCXS Project | INFOS </title>
 </head>
 <body>
 <div class="container">
@@ -44,7 +44,7 @@ if (null == $id) {
 <!-- ============= MENUS PARA PC E CELULAR ======== --->
     <caption>
             <div class="barraTopo">
-              <img class="logo" src="../assets/images/logo_ps2.png"><br>
+              <img class="logo" src="../assets/images/logo_info.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -54,12 +54,12 @@ if (null == $id) {
                           <span class="linha-menu"></span>
                         </div>
                 <ul class="list-menu">
-                  <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
+                        <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
                         <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
-                        <li class="item-menu"> <a href="../infos/index.php" class="link-menu">PlayStation Infos</a></li>
+                         <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation Infos</a></li>
                          <li class="item-menu"> <a href="../psp/index.php" class="link-menu">PlayStation PSP</a></li>
                          <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
-                         <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation2</a></li>
+                         <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
                          <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
 						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
@@ -71,54 +71,15 @@ if (null == $id) {
 
 
           <div class="barraBase">
-             <h3 class="tituloRed">[INFORMAÇÕES - APENAS LEITURA]<br>Jogo: <?php echo $data['titulo']; ?><br>PlayStation PS2<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
+             <h3 class="tituloRed">[INFORMAÇÕES - APENAS LEITURA]<br>Jogo: <?php echo $data['informacao']; ?><br>Informação </h3>
         <form class="form-horizontal">
 
-            <!-- =====   TITULO ======   -->
+            <!-- =====   informacao ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">Titulo PS2</label>
+            <div class="control-group  <?php echo !empty($informacaoErro) ? 'error ' : ''; ?>">
+            <label class="titulo">Informação</label>
                 <div class="controls">
-            <input class="input100" value="<?php echo $data['titulo']; ?>">
-            <span class="focus-input100"></span></div></div></div>
-
-            <!-- =====   descricao ======   -->
-          <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">descricao PS2</label>
-                <div class="controls">
-            <input class="input100" value="<?php echo $data['descricao']; ?>">
-            <span class="focus-input100"></span></div></div></div>
-
-            <!-- =====   CONTENT ID ======   -->
-          <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">CONTENT ID PS2</label>
-                <div class="controls">
-            <input class="input100" value="<?php echo $data['content_id']; ?>">
-            <span class="focus-input100"></span></div></div></div>
-
-            <!-- =====   IMAGEM ======   -->
-          <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">IMAGEM PS2</label>
-                <div class="controls">
-            <input class="input100" value="<?php echo $data['imagem']; ?>">
-            <span class="focus-input100"></span></div></div></div>
-
-            <!-- =====   Data ======   -->
-          <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">DATA PS2</label>
-                <div class="controls">
-            <input class="input100" value="<?php echo $data['cadastro']; ?>">
-            <span class="focus-input100"></span></div></div></div>
-            <!-- =====   TITULO ======   -->
-          <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">Link PS2</label>
-                <div class="controls">
-            <input class="input100" value="<?php echo $data['link']; ?>">
+            <input class="input100" value="<?php echo $data['informacao']; ?>">
             <span class="focus-input100"></span></div></div></div>
 
                     <br/>

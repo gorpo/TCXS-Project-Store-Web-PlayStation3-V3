@@ -116,20 +116,18 @@ Expiração: <?php echo  $data_expira_formatada ?><br>
 <br>
 <p class='textoHome'>
 <strong>Confira algumas informações importantes:</strong>  <br>
-- Para acelerar seus downloads use nosso Tutorial de Proxy.<br>
-- Usuários HEN e CFW podem salvar seus jogos no HD do console.<br>
-- Usuários HAN precisam de pendrive ou hd externo na USB devido limitação do HAN.<br>
-- Downloads segundo plano não tem funcionado, faça os downloads de forma normal.<br>
-- Em caso de links quebrados informe no grupo para que sejam corrigidos.<br>
-- Convertemos, upamos e inserimos na loja mantendo o catálogo atualizado.<br>
-- Temos jogos legendados/dublados conforme obtemos nas comunidades parceiras.<br>
-- As atualizações são automáticas, são feitas atualizações quinzenais.<br>
-- Nossos jogos de PlayStation3 funcionarão mesmo que você remova seu exploit.<br>
-- Todos jogos de PlayStation3 são NO-HAN | NO-HEN, não precisam de licenças.<br>
-- Ao vencer seu login automáticamente ele deixará de funcionar.<br>
-- Não compartilhe seu login, ou será banido, isto é automático da programação.<br>
-- Jogos baixados seguem sendo seus mesmo que o login tenha vencido.<br>
 
+<?php
+  include('../database.php');
+  $pdo = Database::conectar();
+  $sql = 'SELECT * FROM playstation_infos ORDER BY informacao ASC';
+
+  foreach($pdo->query($sql)as $row)
+  {
+      echo "- ".$row['informacao']."<br>";
+  }
+  Database::desconectar();
+  ?>
 <br><br><br><br><br><br>
 </p>
 

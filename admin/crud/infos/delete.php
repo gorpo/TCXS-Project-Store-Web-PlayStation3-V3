@@ -8,8 +8,7 @@
 
 
 <?php
-include '../../../database.php';
-        
+require '../../../database.php';
 
 $id = 0;
 
@@ -22,13 +21,13 @@ if(!empty($_POST))
 {
     $id = $_POST['id'];
 
-    //Delete do banco:
+    //Delete do database:
     $pdo = Database::conectar();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "DELETE FROM playstation_emuladores where id = ?";
+    $sql = "DELETE FROM playstation_infos where id = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
-    Database::desconectar();
+    database::desconectar();
     header("Location: index.php");
 
 }
@@ -36,11 +35,11 @@ if(!empty($_POST))
 
 $pdo = Database::conectar();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "SELECT * FROM playstation_emuladores where id = ?";
+$sql = "SELECT * FROM playstation_infos where id = ?";
 $q = $pdo->prepare($sql);
 $q->execute(array($id));
 $data = $q->fetch(PDO::FETCH_ASSOC);
-Database::desconectar();
+database::desconectar();
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +60,7 @@ Database::desconectar();
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-      <title>TCXS Project | DELETE GAME</title>
+      <title>TCXS Project | DELETE INFO</title>
 </head>
 <body>
 <div class="container">
@@ -69,7 +68,7 @@ Database::desconectar();
 <!-- ============= MENUS PARA PC E CELULAR ======== --->
     <caption>
             <div class="barraTopo">
-              <img class="logo" src="../assets/images/logo_emuladores.png"><br>
+              <img class="logo" src="../assets/images/logo_info.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -81,12 +80,12 @@ Database::desconectar();
                 <ul class="list-menu">
                   <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
                         <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
-                        <li class="item-menu"> <a href="../infos/index.php" class="link-menu">PlayStation Infos</a></li>
+                         <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation Infos</a></li>
                          <li class="item-menu"> <a href="../psp/index.php" class="link-menu">PlayStation PSP</a></li>
                          <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
-                         <li class="item-menu"> <a href="index.php" class="link-menu">Emuladores</a></li>
+                         <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
 						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
@@ -96,15 +95,15 @@ Database::desconectar();
 
 
           <div class="barraBase">
-            <h3 class="tituloRed">[WARNING]<br>Deletar: <?php echo $data['titulo']; ?><br>PlayStation PSP<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
+            <h3 class="tituloRed">[WARNING]<br>Deletar: <?php echo $data['informacao']; ?><br>Informação</h3>
         <form class="form-horizontal" action="delete.php" method="post"  autocomplete="off">
 
 
 
-            <!-- =====   TITULO ======   -->
+            <!-- =====   informacao ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">Excluir o jogo?</label>
+            <div class="control-group  <?php echo !empty($informacaoErro) ? 'error ' : ''; ?>">
+            <label class="titulo">Excluir a informação?</label>
                 <div class="controls">
                     <input type="hidden" name="id" value="<?php echo $id;?>" />
             <span class="focus-input100"></span></div></div></div>
@@ -113,8 +112,8 @@ Database::desconectar();
 
 
                     <div class="form actions">
-                        <button type="submit" class="login100-form-btn m-b-16">Sim quero excluir o jogo <?php echo $data['titulo']; ?></button>
-                        <a href="index.php" type="btn" class="login100-form-btn m-b-16">Não quero excluir o jogo...</a>
+                        <button type="submit" class="login100-form-btn m-b-16">Sim quero excluir a informação <?php echo $data['informacao']; ?></button>
+                        <a href="index.php" type="btn" class="login100-form-btn m-b-16">Não quero excluir a informação...</a>
                     </div>
                 </form>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

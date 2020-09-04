@@ -6,43 +6,43 @@
         ╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   -->
 <!-- @Gorpo Orko - 2020 -->
 
-
 <?php
-include '../../../database.php';
-        
+require '../../../database.php';
+//Acompanha os erros de validação
+//id informacao descricao content_id imagem_db imagem link
+// Processar so quando tenha uma chamada post
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $informacaoErro = null;
 
-$id = 0;
+    if (!empty($_POST)) {
+        $validacao = True;
+        $novoUsuario = False;
+        if (!empty($_POST['informacao'])) {
+            $informacao = $_POST['informacao'];
+        } else {
+            $informacaoErro = 'Por favor digite a informacao!';
+            $validacao = False;
+        }
 
-if(!empty($_GET['id']))
-{
-    $id = $_REQUEST['id'];
+    }
+//---------------------------------------------------------------------------------------------------------------------
+//Inserindo o jogo na database:
+    if ($validacao) {
+        $pdo = Database::conectar();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO playstation_infos (informacao) VALUES(?)";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($informacao));
+        database::desconectar();
+        header("Location: index.php");
+    }
 }
 
-if(!empty($_POST))
-{
-    $id = $_POST['id'];
 
-    //Delete do banco:
-    $pdo = Database::conectar();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "DELETE FROM playstation_emuladores where id = ?";
-    $q = $pdo->prepare($sql);
-    $q->execute(array($id));
-    Database::desconectar();
-    header("Location: index.php");
-
-}
-
-
-$pdo = Database::conectar();
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "SELECT * FROM playstation_emuladores where id = ?";
-$q = $pdo->prepare($sql);
-$q->execute(array($id));
-$data = $q->fetch(PDO::FETCH_ASSOC);
-Database::desconectar();
 ?>
 
+
+<!-- ============= TEMPLATE HTML ======== --->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -61,7 +61,7 @@ Database::desconectar();
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-      <title>TCXS Project | DELETE GAME</title>
+      <title>TCXS Project | ADD INFO</title>
 </head>
 <body>
 <div class="container">
@@ -69,7 +69,7 @@ Database::desconectar();
 <!-- ============= MENUS PARA PC E CELULAR ======== --->
     <caption>
             <div class="barraTopo">
-              <img class="logo" src="../assets/images/logo_emuladores.png"><br>
+              <img class="logo" src="../assets/images/logo_info.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -79,14 +79,14 @@ Database::desconectar();
                           <span class="linha-menu"></span>
                         </div>
                 <ul class="list-menu">
-                  <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
+                        <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
                         <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
-                        <li class="item-menu"> <a href="../infos/index.php" class="link-menu">PlayStation Infos</a></li>
+                         <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation Infos</a></li>
                          <li class="item-menu"> <a href="../psp/index.php" class="link-menu">PlayStation PSP</a></li>
                          <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
-                         <li class="item-menu"> <a href="index.php" class="link-menu">Emuladores</a></li>
+                         <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
 						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
@@ -95,35 +95,47 @@ Database::desconectar();
 
 
 
-          <div class="barraBase">
-            <h3 class="tituloRed">[WARNING]<br>Deletar: <?php echo $data['titulo']; ?><br>PlayStation PSP<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
-        <form class="form-horizontal" action="delete.php" method="post"  autocomplete="off">
+<div class="barraBase">
+  <h3 class="tituloRed"> Cadastrar INFO da HOME na Database </h3>
+        <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
 
 
-
-            <!-- =====   TITULO ======   -->
+          <!-- =====   informacao ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
-            <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">Excluir o jogo?</label>
-                <div class="controls">
-                    <input type="hidden" name="id" value="<?php echo $id;?>" />
-            <span class="focus-input100"></span></div></div></div>
+            <div class="control-group  <?php echo !empty($informacaoErro) ? 'error ' : ''; ?>">
+            <label class="titulo">INFORMAÇÃO AOS USUÁRIOS NA HOMEPAGE</label>
+             <div class="controls">
+            <input class="input100" type="text" name="informacao" type="text" placeholder="Insira o informacao para usuários."
+                                   value="<?php echo !empty($informacao) ? $informacao : ''; ?>">
+                                   <?php if (!empty($informacaoErro)): ?>
+                                <span class="text-danger"><?php echo $informacaoErro; ?></span>
+                            <?php endif; ?>
+            <span class="focus-input100"></span>
+            </span>
+          </div></div></div>
+
+                  
 
 
-
-
-                    <div class="form actions">
-                        <button type="submit" class="login100-form-btn m-b-16">Sim quero excluir o jogo <?php echo $data['titulo']; ?></button>
-                        <a href="index.php" type="btn" class="login100-form-btn m-b-16">Não quero excluir o jogo...</a>
+                    <div class="form-actions">
+                        <br/>
+                        <button type="submit" class="login100-form-btn m-b-16">Adicionar</button>
+                        <a href="index.php" type="btn" class="login100-form-btn m-b-16">Voltar</a>
                     </div>
                 </form>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div></div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="../assets/js/bootstrap.min.js"></script>
-    </body>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="../assets/js/bootstrap.min.js"></script>
+</body>
 
-    </html>
+</html>
+

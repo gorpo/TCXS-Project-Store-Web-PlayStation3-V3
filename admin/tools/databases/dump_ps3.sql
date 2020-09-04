@@ -40,6 +40,17 @@ CREATE TABLE `playstation_emuladores` (
 
 
 --
+-- Estrutura da tabela `home informacoes`
+--
+
+CREATE TABLE `playstation_infos` (
+  `id` MEDIUMINT NOT NULL AUTO_INCREMENT,
+  `informacao` varchar(999) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+--
 -- Estrutura da tabela `jogos extras`
 --
 

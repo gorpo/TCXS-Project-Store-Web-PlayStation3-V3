@@ -482,6 +482,7 @@ if(isset($_POST["submit"])){
                 <ul class="list-menu">
                     <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
                         <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
+                        <li class="item-menu"> <a href="../infos/index.php" class="link-menu">PlayStation Infos</a></li>
                          <li class="item-menu"> <a href="../psp/index.php" class="link-menu">PlayStation PSP</a></li>
                          <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
