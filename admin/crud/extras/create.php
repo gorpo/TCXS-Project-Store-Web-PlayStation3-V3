@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($validacao) {
         $pdo = Database::conectar();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO playstation_emuladores (titulo, descricao, content_id, imagem,cadastro, link) VALUES(?,?,?,?,NOW(),? )";
+        $sql = "INSERT INTO playstation_extras (titulo, descricao, content_id, imagem,cadastro, link) VALUES(?,?,?,?,NOW(),? )";
         $q = $pdo->prepare($sql);
         $q->execute(array($titulo, $descricao, $content_id, $imagem, $link));
         Database::desconectar();
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //================== FUNÇÃO UPLOAD DE IMAGEM | REDIMENSIONAMENTO | MARCA DAGUA TCXS ===================================
 //--------------------------------------------------->>>
 // CAMINHO PARA SALVAR A IMAGEM | CAMINHO DA MARCA DAGUA
-$targetDir = "../../../loja/imagens/emuladores/"; 
+$targetDir = "../../../loja/imagens/extras/"; 
 $watermarkImagePath = '../assets/images/watermark.png'; 
 // FUNÇAO RESPONSAVEL PELO REDIMENSINAMENTO 
 function resize_image($file, $w, $h, $crop=FALSE) {
@@ -224,7 +224,7 @@ if(isset($_POST["submit"])){
 <!-- ============= MENUS PARA PC E CELULAR ======== --->
     <caption>
             <div class="barraTopo">
-              <img class="logo" src="../assets/images/logo_emuladores.png"><br>
+              <img class="logo" src="../assets/images/logo_extras.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -240,8 +240,8 @@ if(isset($_POST["submit"])){
                          <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
-                         <li class="item-menu"> <a href="index.php" class="link-menu">Emuladores</a></li>
-						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
+                         <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">EMULADORES</a></li>
+						 <li class="item-menu"> <a href="index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
           </caption>
@@ -251,7 +251,7 @@ if(isset($_POST["submit"])){
     
 
 <div class="barraBase">
-  <h3 class="tituloRed"> Cadastrar Emuladores  na Database </h3>
+  <h3 class="tituloRed"> Cadastrar EXTRAS  na Database </h3>
         <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
            <!-- <h3 class="tituloRed"> Adicionar Jogo PSP </h3> -->
 
@@ -259,9 +259,9 @@ if(isset($_POST["submit"])){
           <!-- =====   TITULO ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
             <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">Titulo EMULADORES </label>
+            <label class="titulo">Titulo EXTRAS </label>
              <div class="controls">
-            <input class="input100" type="text" name="titulo" type="text" placeholder="Insira o titulo do jogo"
+            <input class="input100" type="text" name="titulo" type="text" placeholder="Insira o titulo "
                                    value="<?php echo !empty($titulo) ? $titulo : ''; ?>">
                                    <?php if (!empty($tituloErro)): ?>
                                 <span class="text-danger"><?php echo $tituloErro; ?></span>
@@ -273,9 +273,9 @@ if(isset($_POST["submit"])){
           <!-- =====   ~descricao ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
              <div class="control-group <?php echo !empty($descricaoErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">descricao EMULADORES </label>
+                        <label class="titulo">descricao EXTRAS </label>
                         <div class="controls">
-                            <input class="input100" name="descricao" type="text" placeholder="Insira a descricao do jogo."
+                            <input class="input100" name="descricao" type="text" placeholder="Insira a descricao ."
                                    value="<?php echo !empty($descricao) ? $descricao : ''; ?>">
                             <?php if (!empty($imagem_dbErro)): ?>
                                 <span class="text-danger"><?php echo $descricaoErro; ?></span>
@@ -289,9 +289,9 @@ if(isset($_POST["submit"])){
           <!-- =====   CONTENT ID ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
                     <div class="control-group <?php echo !empty($content_idErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Content_id EMULADORES </label>
+                        <label class="titulo">Content_id EXTRAS </label>
                         <div class="controls">
-                            <input class="input100" name="content_id" type="text" placeholder="Insira a content_id do jogo"
+                            <input class="input100" name="content_id" type="text" placeholder="Insira algo ou content_id"
                                    value="<?php echo !empty($content_id) ? $content_id : ''; ?>">
                             <?php if (!empty($content_idErro)): ?>
                                 <span class="text-danger"><?php echo $content_idErro; ?></span>
@@ -331,7 +331,7 @@ if(isset($_POST["submit"])){
 <!-- =====   IMAGEM | pega as infos da função de upload e retorna se o status esta True o nome da imagem para por na DB======   -->
         <div class="wrap-input100 validate-input m-b-16" >
             <div class="control-group <?php echo !empty($imagemErro) ? 'error ' : ''; ?>">
-                <label class="titulo">Imagem EMULADOR</label>
+                <label class="titulo">Imagem EXTRAS</label>
                     <div class="controls">
                       <input class="input100" name="imagem" type="text" placeholder="Insira o nome da imagem"
                           value="<?php 
@@ -352,7 +352,7 @@ if(isset($_POST["submit"])){
           <!-- =====  LINK  ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
                     <div class="control-group <?php echo !empty($linkErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Link do jogo</label>
+                        <label class="titulo">Link do Conteudo</label>
                         <div class="controls">
                             <input class="input100"  name="link" type="text" placeholder="Insira o nome da imagem"
                                    value="<?php echo !empty($link) ? $link : ''; ?>">

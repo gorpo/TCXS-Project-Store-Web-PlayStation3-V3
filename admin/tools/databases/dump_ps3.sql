@@ -38,6 +38,20 @@ CREATE TABLE `playstation_emuladores` (
   `link` mediumtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+--
+-- Estrutura da tabela `jogos extras`
+--
+
+CREATE TABLE `playstation_extras` (
+  `id` int(255) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `titulo` varchar(999999) COLLATE utf8_unicode_ci NOT NULL,
+  `descricao` varchar(999999) COLLATE utf8_unicode_ci NOT NULL,
+  `content_id` varchar(999999) COLLATE utf8_unicode_ci NOT NULL,
+  `imagem` varchar(999999) COLLATE utf8_unicode_ci NOT NULL,
+  `cadastro` datetime NOT NULL,
+  `link` varchar(999999) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 --
 -- Extraindo dados da tabela `playstation_emuladores`
 --

@@ -96,6 +96,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $usuario != "") {
                          <li class="item-menu"> <a href="ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="ps3/index.php" class="link-menu">PlayStation3</a></li>
                          <li class="item-menu"> <a href="emuladores/index.php" class="link-menu">Emuladores</a></li>
+						 <li class="item-menu"> <a href="extras/index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
           </caption>

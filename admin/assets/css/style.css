@@ -218,7 +218,7 @@ h4 {
 }
 
 img:hover {
-    animation: shake 0.5s;
+    /* animation: shake 0.5s;  */
     animation-iteration-count: infinite;
 }
 

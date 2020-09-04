@@ -36,7 +36,7 @@ if (null == $id) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-      <title>TCXS Project | ADD GAME</title>
+      <title>TCXS Project | INFO PS2</title>
 </head>
 <body>
 <div class="container">
@@ -61,6 +61,7 @@ if (null == $id) {
                          <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
                          <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
+						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
           </caption>

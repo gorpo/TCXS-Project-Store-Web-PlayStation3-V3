@@ -241,6 +241,7 @@ if(isset($_POST["submit"])){
                          <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
                          <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
+						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
           </caption>
@@ -252,7 +253,6 @@ if(isset($_POST["submit"])){
 <div class="barraBase">
   <h3 class="tituloRed"> Cadastrar PlayStation PS2 na Database </h3>
         <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
-           <!-- <h3 class="tituloRed"> Adicionar Jogo PSP </h3> -->
 
 
           <!-- =====   TITULO ======   -->

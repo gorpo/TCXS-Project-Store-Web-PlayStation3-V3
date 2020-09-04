@@ -11,7 +11,7 @@
 
 <?php
 
-require '../../../database.php';
+include '../../../database.php';
 
 $id = null;
 if (!empty($_GET['id'])) {
@@ -70,7 +70,7 @@ if (!empty($_POST)) {
     if ($validacao) {
         $pdo = Database::conectar();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE playstation_ps1   set titulo=:titulo, descricao=:descricao, content_id=:content_id, imagem=:imagem, cadastro=now() , link=:link  WHERE id=:id";
+        $sql = "UPDATE playstation_extras  set titulo=:titulo, descricao=:descricao, content_id=:content_id, imagem=:imagem, cadastro=now() , link=:link  WHERE id=:id";
         $q = $pdo->prepare($sql);
         $q->bindParam(':titulo', $titulo);
         $q->bindParam(':descricao', $descricao);
@@ -79,7 +79,7 @@ if (!empty($_POST)) {
         $q->bindParam(':link', $link);
         $q->bindParam(':id', $id);
         $q->execute();
-        database::desconectar();
+        Database::desconectar();
         header("Location: index.php");
     }
 
@@ -90,7 +90,7 @@ if (!empty($_POST)) {
 } else {
     $pdo = Database::conectar();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM playstation_ps1  where id = ?";
+    $sql = "SELECT * FROM playstation_extras where id = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
     $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -100,7 +100,7 @@ if (!empty($_POST)) {
     $imagem = $data['imagem'];
     $cadastro = $data['cadastro'];
     $link = $data['link'];
-    database::desconectar();
+    Database::desconectar();
 }
 ?>
 
@@ -123,7 +123,7 @@ if (!empty($_POST)) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-      <title>TCXS Project | UPDATE PS1 GAME</title>
+      <title>TCXS Project | ADD EXTRAS</title>
 </head>
 <body>
 <div class="container">
@@ -131,7 +131,7 @@ if (!empty($_POST)) {
 <!-- ============= MENUS PARA PC E CELULAR ======== --->
     <caption>
             <div class="barraTopo">
-              <img class="logo" src="../assets/images/logo_ps1.png"><br>
+              <img class="logo" src="../assets/images/logo_extras.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -141,14 +141,14 @@ if (!empty($_POST)) {
                           <span class="linha-menu"></span>
                         </div>
                 <ul class="list-menu">
-                        <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
+                  <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
                         <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
                          <li class="item-menu"> <a href="../psp/index.php" class="link-menu">PlayStation PSP</a></li>
-                         <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation1</a></li>
+                         <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
-                         <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
-						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
+                         <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">EMULADORES</a></li>
+						 <li class="item-menu"> <a href="index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
           </caption>
@@ -157,14 +157,14 @@ if (!empty($_POST)) {
 
 
 <div class="barraBase">
-    <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['titulo']; ?><br>PlayStation PS1<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
+    <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['titulo']; ?><br>PlayStation EXTRAS<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
     <form class="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post"  autocomplete="off">
 
 
         <!-- =====   TITULO ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
             <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">Titulo PS1</label>
+            <label class="titulo">Titulo EXTRAS </label>
              <div class="controls">
             <input class="input100" type="text" name="titulo" type="text" placeholder="Insira o titulo do jogo"
                                    value="<?php echo !empty($titulo) ? $titulo : ''; ?>">
@@ -179,9 +179,9 @@ if (!empty($_POST)) {
           <!-- =====   ~descricao ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
              <div class="control-group <?php echo !empty($descricaoErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">descricao PS1</label>
+                        <label class="titulo">descricao EXTRAS </label>
                         <div class="controls">
-                            <input class="input100" name="descricao" type="text" placeholder="Insira a descricao do jogo."
+                            <input class="input100" name="descricao" type="text" placeholder="Insira a descricao ."
                                    value="<?php echo !empty($descricao) ? $descricao : ''; ?>">
                             <?php if (!empty($imagem_dbErro)): ?>
                                 <span class="text-danger"><?php echo $descricaoErro; ?></span>
@@ -195,9 +195,9 @@ if (!empty($_POST)) {
           <!-- =====   descricao ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
                     <div class="control-group <?php echo !empty($content_idErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Content_id PS1</label>
+                        <label class="titulo">Content_id EXTRAS </label>
                         <div class="controls">
-                            <input class="input100" name="content_id" type="text" placeholder="Insira a content_id do jogo"
+                            <input class="input100" name="content_id" type="text" placeholder="Insira a content_id "
                                    value="<?php echo !empty($content_id) ? $content_id : ''; ?>">
                             <?php if (!empty($content_idErro)): ?>
                                 <span class="text-danger"><?php echo $content_idErro; ?></span>
@@ -210,7 +210,7 @@ if (!empty($_POST)) {
           <!-- =====   IMAGEM ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
                     <div class="control-group <?php echo !empty($imagemErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Imagem PS1</label>
+                        <label class="titulo">Imagem EXTRAS </label>
                         <div class="controls">
                             <input class="input100" name="imagem" type="text" placeholder="Insira o nome da imagem"
                                    value="<?php echo !empty($imagem) ? $imagem : ''; ?>">
@@ -227,7 +227,7 @@ if (!empty($_POST)) {
           <!-- =====  LINK  ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
                     <div class="control-group <?php echo !empty($linkErro) ? 'error ' : ''; ?>">
-                        <label class="titulo">Link do jogo</label>
+                        <label class="titulo">Link do Conteudo</label>
                         <div class="controls">
                             <input class="input100"  name="link" type="text" placeholder="Insira o nome da imagem"
                                    value="<?php echo !empty($link) ? $link : ''; ?>">

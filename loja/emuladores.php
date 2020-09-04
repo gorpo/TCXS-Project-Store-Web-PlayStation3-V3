@@ -80,7 +80,7 @@ if(!$_SESSION['nome']) {
                     <li class="tm-nav-item"><a href="ps2.php" class="tm-nav-item-link tm-button ">PlayStation2</a></li>
                     <li class="tm-nav-item"><a href="ps3.php" class="tm-nav-item-link tm-button ">PlayStation3</a></li>
                     <li class="tm-nav-item"><a href="emuladores.php" class="tm-nav-item-link tm-button active">Emuladores</a></li>
-                    <li class="tm-nav-item"><a href="doadores/index.html" class="tm-nav-item-link tm-button">Guia para Membros</a></li>
+                    <li class="tm-nav-item"><a href="extras.php" class="tm-nav-item-link tm-button">Extras</a></li>
                     <li class="tm-nav-item"><a href="https://tcxsproject.com.br/dev/ps3xploit.com/" class="tm-nav-item-link tm-button">PS3Xploit</a></li>
                 </ul>
             </nav>

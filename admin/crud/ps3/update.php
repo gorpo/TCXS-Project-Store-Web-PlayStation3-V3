@@ -462,6 +462,7 @@ if (!empty($_POST['link30'])) {
                          <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
                          <li class="item-menu"> <a href="index.php" class="link-menu">PlayStation3</a></li>
                          <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">Emuladores</a></li>
+						 <li class="item-menu"> <a href="../extras/index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
           </caption>
@@ -470,7 +471,7 @@ if (!empty($_POST['link30'])) {
 
 
 <div class="barraBase">
-    <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['titulo']; ?><br>PlayStation PSP<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
+    <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['titulo']; ?><br>PlayStation PS3<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
     <form class="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post"  autocomplete="off">
 
 

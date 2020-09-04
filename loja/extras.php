@@ -78,9 +78,9 @@ if(!$_SESSION['nome']) {
                     <li class="tm-nav-item"><a href="psp.php" class="tm-nav-item-link tm-button ">PlayStation PSP</a></li>
                     <li class="tm-nav-item"><a href="ps1.php" class="tm-nav-item-link tm-button ">PlayStation1</a></li>
                     <li class="tm-nav-item"><a href="ps2.php" class="tm-nav-item-link tm-button ">PlayStation2</a></li>
-                    <li class="tm-nav-item"><a href="ps3.php" class="tm-nav-item-link tm-button active">PlayStation3</a></li>
-                    <li class="tm-nav-item"><a href="emuladores.php" class="tm-nav-item-link tm-button">Emuladores</a></li>
-                    <li class="tm-nav-item"><a href="extras.php" class="tm-nav-item-link tm-button">Extras</a></li>
+                    <li class="tm-nav-item"><a href="ps3.php" class="tm-nav-item-link tm-button ">PlayStation3</a></li>
+                    <li class="tm-nav-item"><a href="emuladores.php" class="tm-nav-item-link tm-button ">Emuladores</a></li>
+                    <li class="tm-nav-item"><a href="extras.php" class="tm-nav-item-link tm-button active">Extras</a></li>
                     <li class="tm-nav-item"><a href="https://tcxsproject.com.br/dev/ps3xploit.com/" class="tm-nav-item-link tm-button">PS3Xploit</a></li>
                 </ul>
             </nav>
@@ -94,124 +94,22 @@ Expiração: <?php echo  $data_expira_formatada ?><br>
     </div>
  <div class="tm-main-content">
 <!-- ============================== CODIGO PHP MYSQL JOGOS PARA DOWNLOAD  ==============================   -->
-                     
 <?php
-include('../database.php');
-$pdo = Database::conectar();
-$sql = 'SELECT * FROM playstation_ps3 ORDER BY titulo ASC';
-foreach($pdo->query($sql)as $row)
-{
-  echo '<div class="media-body  tm-bg-light-gray"><table> <tr> <td>';
-  echo '<div class="dropdown"> <img  class="caixa_imagem" class="dropbtn" src="imagens/ps3/'.$row['imagem'].'" width="170" width="170"/>';
-  echo '<div class="dropdown-content">';
-  
-  //FUNÇÕES PARA MOSTRAR OS BOTOES QUANTOS EXISTIR
-  if ($row['link1'] != "---") {
-        echo '<a href="'.$row['link1'].'">'.$row['titulo'].' | Parte 1</a>';
-        }
-if ($row['link2'] != "---") {
-        echo '<a href="'.$row['link2'].'">'.$row['titulo'].' | Parte 2</a>';
-        }
-if ($row['link3'] != "---") {
-        echo '<a href="'.$row['link3'].'">'.$row['titulo'].' | Parte 3</a>';
-        }
-if ($row['link4'] != "---") {
-        echo '<a href="'.$row['link4'].'">'.$row['titulo'].' | Parte 4</a>';
-        }
-if ($row['link5'] != "---") {
-        echo '<a href="'.$row['link5'].'">'.$row['titulo'].' | Parte 5</a>';
-        }
-if ($row['link6'] != "---") {
-        echo '<a href="'.$row['link6'].'">'.$row['titulo'].' | Parte 6</a>';
-        }
-if ($row['link7'] != "---") {
-        echo '<a href="'.$row['link7'].'">'.$row['titulo'].' | Parte 7</a>';
-        }
-if ($row['link8'] != "---") {
-        echo '<a href="'.$row['link8'].'">'.$row['titulo'].' | Parte 8</a>';
-        }
-if ($row['link9'] != "---") {
-        echo '<a href="'.$row['link9'].'">'.$row['titulo'].' | Parte 9</a>';
-        }
-if ($row['link10'] != "---") {
-        echo '<a href="'.$row['link10'].'">'.$row['titulo'].' | Parte 10</a>';
-        }
-if ($row['link11'] != "---") {
-        echo '<a href="'.$row['link11'].'">'.$row['titulo'].' | Parte 11</a>';
-        }
-if ($row['link12'] != "---") {
-        echo '<a href="'.$row['link12'].'">'.$row['titulo'].' | Parte 12</a>';
-        }
-if ($row['link13'] != "---") {
-        echo '<a href="'.$row['link13'].'">'.$row['titulo'].' | Parte 13</a>';
-        }
-if ($row['link14'] != "---") {
-        echo '<a href="'.$row['link14'].'">'.$row['titulo'].' | Parte 14</a>';
-        }
-if ($row['link15'] != "---") {
-        echo '<a href="'.$row['link15'].'">'.$row['titulo'].' | Parte 15</a>';
-        }
-if ($row['link16'] != "---") {
-        echo '<a href="'.$row['link16'].'">'.$row['titulo'].' | Parte 16</a>';
-        }
-if ($row['link17'] != "---") {
-        echo '<a href="'.$row['link17'].'">'.$row['titulo'].' | Parte 17</a>';
-        }
-if ($row['link18'] != "---") {
-        echo '<a href="'.$row['link18'].'">'.$row['titulo'].' | Parte 18</a>';
-        }
-if ($row['link19'] != "---") {
-        echo '<a href="'.$row['link19'].'">'.$row['titulo'].' | Parte 19</a>';
-        }
-if ($row['link20'] != "---") {
-        echo '<a href="'.$row['link20'].'">'.$row['titulo'].' | Parte 20</a>';
-        }
-if ($row['link21'] != "---") {
-        echo '<a href="'.$row['link21'].'">'.$row['titulo'].' | Parte 21</a>';
-        }
-if ($row['link22'] != "---") {
-        echo '<a href="'.$row['link22'].'">'.$row['titulo'].' | Parte 22</a>';
-        }
-if ($row['link23'] != "---") {
-        echo '<a href="'.$row['link23'].'">'.$row['titulo'].' | Parte 23</a>';
-        }
-if ($row['link24'] != "---") {
-        echo '<a href="'.$row['link24'].'">'.$row['titulo'].' | Parte 24</a>';
-        }
-if ($row['link25'] != "---") {
-        echo '<a href="'.$row['link25'].'">'.$row['titulo'].' | Parte 25</a>';
-        }
-if ($row['link26'] != "---") {
-        echo '<a href="'.$row['link26'].'">'.$row['titulo'].' | Parte 26</a>';
-        }
-if ($row['link27'] != "---") {
-        echo '<a href="'.$row['link27'].'">'.$row['titulo'].' | Parte 27</a>';
-        }
-if ($row['link28'] != "---") {
-        echo '<a href="'.$row['link28'].'">'.$row['titulo'].' | Parte 28</a>';
-        }
-if ($row['link29'] != "---") {
-        echo '<a href="'.$row['link29'].'">'.$row['titulo'].' | Parte 29</a>';
-        }
-if ($row['link30'] != "---") {
-        echo '<a href="'.$row['link30'].'">'.$row['titulo'].' | Parte 30</a>';
-        }
+  include('../database.php');
+  $pdo = Database::conectar();
+  $sql = 'SELECT * FROM playstation_extras ORDER BY titulo ASC';
 
-
-
-
-
-
-
-
-
-  echo	'</div> </div> </td>  <td><h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
-  echo  '<p class="textoJogo">'.$row['descricao'].'</p> </a> </td> </tr> </table> </div>';
-}
-Database::desconectar();
-?>
-
-
+  foreach($pdo->query($sql)as $row)
+  {
+      echo '<div class="media-body  tm-bg-light-gray"><table> <tr> <td>';
+      echo '<a href="'.$row['link'].'">';
+      echo '<img  class="caixa_imagem"  src="imagens/extras/'.$row['imagem'].'"/> </td>';
+      echo '<td> <h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
+      echo '<p class="textoJogo">'.$row['descricao'].'</p> </a>';
+      echo '</td> </tr> </table> </div> ';
+  }
+  Database::desconectar();
+  ?>
 
 
 <!-- final do container-fluid todo conteudo deve ficar antes desta div -->   

@@ -6,40 +6,6 @@
         ╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   -->
 <!-- @Gorpo Orko - 2020 -->
 
-<?php
-session_start();
-//inclui o arquivo de conexao com banco de dados
-include('../../conexao.php');
-
-//nome usuario
-$usuario =  $_SESSION['nome'];
-
-//verifica se esta logado senao redireciona
-if(!$_SESSION['nome']) {
-    header('Location: ../../nao_logado.php');
-  exit();  
-}
-
-
-
-
-
-
-$usuario = mysqli_real_escape_string($conexao, $_SESSION['nome']);
-$sql= "SELECT (nivel) from playstation_users where usuario = '$usuario'"; //pega o usuario no banco de dados
-$sqldata = mysqli_query($conexao, $sql); //conexao com a query
-$rowdata = mysqli_fetch_array($sqldata); //array da variavel
-$nivel = $rowdata['nivel']; //seleciona a data do usuario
-
-//SE NAO FOR ADM É REDIRECIONADO PARA CAMINHO SETADO
-if($nivel != 'admin') {
-    header('Location: ../../nao_logado.php');
-  exit();  
-}
-
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,10 +18,10 @@ if($nivel != 'admin') {
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Sistema de administração TCXS Project"/>
-      <meta property="og:image" content="assets/images/logo.png"/>
-      <link rel="shortcut icon" href="assets/images/icon.png" />
+      <meta property="og:image" content="../assets/images/logo.png"/>
+      <link rel="shortcut icon" href="../assets/images/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
@@ -67,9 +33,13 @@ if($nivel != 'admin') {
 
         <!-- inicio da tabela -->
 
+
+
+
+        <table>
           <caption>
             <div class="barraTopo">
-              <img class="logo" src="assets/images/logo_psp.png"><br>
+              <img class="logo" src="../assets/images/logo_extras.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -79,43 +49,72 @@ if($nivel != 'admin') {
                           <span class="linha-menu"></span>
                         </div>
                 <ul class="list-menu">
-                          <li class="item-menu"> <a href="cadastro_usuarios.php" class="link-menu">Cadastro Usuarios</a></li>
-                          <li class="item-menu"> <a href="consulta_usuarios.php" class="link-menu">Verifica Usuarios</a></li>
-                         <li class="item-menu"> <a href="psp/index.php" class="link-menu">PlayStation PSP</a></li>
-                         <li class="item-menu"> <a href="ps1/index.php" class="link-menu">PlayStation1</a></li>
-                         <li class="item-menu"> <a href="ps2/index.php" class="link-menu">PlayStation2</a></li>
-                         <li class="item-menu"> <a href="ps3/index.php" class="link-menu">PlayStation3</a></li>
-                         <li class="item-menu"> <a href="emuladores/index.php" class="link-menu">Emuladores</a></li>
-						 <li class="item-menu"> <a href="extras/index.php" class="link-menu">Extras</a></li>
+                  <li class="item-menu"> <a href="../cadastro_usuarios.php" class="link-menu">CADASTRO USUARIO</a></li>
+                        <li class="item-menu"> <a href="../consulta_usuarios.php" class="link-menu">VERIFICA USUARIO</a></li>
+                         <li class="item-menu"> <a href="../psp/index.php" class="link-menu">PlayStation PSP</a></li>
+                         <li class="item-menu"> <a href="../ps1/index.php" class="link-menu">PlayStation1</a></li>
+                         <li class="item-menu"> <a href="../ps2/index.php" class="link-menu">PlayStation2</a></li>
+                         <li class="item-menu"> <a href="../ps3/index.php" class="link-menu">PlayStation3</a></li>
+                         <li class="item-menu"> <a href="../emuladores/index.php" class="link-menu">EMULADORES</a></li>
+						 <li class="item-menu"> <a href="index.php" class="link-menu">Extras</a></li>
                 </ul></label></div>
             </div>
+            <a href="create.php" type="btn" class="login100-form-btn m-b-16">ADICIONAR EXTRAS</a>
           </caption>
 
-        <div class="barraBase">
-          <h2 class="tituloRedHome">Bem vindo <?php echo  $usuario ?> | Painel Administrador V:1.0</h2>
-          <br>
-          <a href="cadastro_usuarios.php" type="btn" class="login100-form-btn m-b-16 ">Cadastro Usuarios</a>
-          <a href="consulta_usuarios.php" type="btn" class="login100-form-btn m-b-16">Verifica Usuarios</a>
-          <a href="psp/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation PSP</a>
-          <a href="ps1/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation1</a>
-          <a href="ps2/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation2</a>
-          <a href="ps3/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation3</a>
-          <a href="emuladores/index.php" type="btn" class="login100-form-btn m-b-16">Emuladores</a>
-          <a href="extras/index.php" type="btn" class="login100-form-btn m-b-16">Extras</a>
-          <br><br><br><br><br><br><br><br><br><br>
+        <!-- colunas do topo -->
+          <thead>
+              <tr>
+                  <td scope="col">Id</td>
+                  <td scope="col">TITULO</td>
+                  <td scope="col">DESCRIÇÃO</td>
+                  <td scope="col">CONTENT ID</td>
+                  <td scope="col">IMAGEM</td>
+                  <td scope="col">DATA</td>
+                  <td scope="col">LINK</td>
+                  <td scope="col">CRUD</td>
+              </tr>
+          </thead>
+          <tbody>
+
+        <!-- codigo php que chama as tabelas -->                      
+        <?php
+        include '../../../database.php';
+        $pdo = Database::conectar();
+        $sql = 'SELECT * FROM playstation_extras ORDER BY id DESC';
+
+        foreach($pdo->query($sql)as $row)
+        {
+            echo '<tr>'; 
+            echo '<td data-label="ID" scope="row">'. $row['id'] . '</td>';
+            echo '<td data-label="Titulo">'. $row['titulo'] . '</td>';
+            echo '<td data-label="descricao">'. $row['descricao'] . '</td>';
+            echo '<td  data-label="Content ID">'. $row['content_id'] . '</td>';
+            echo '<td data-label="Imagem">'. $row['imagem'] . '</td>';
+            echo '<td data-label="Data">'. $row['cadastro'] . '</td>';
+            echo '<td  data-label="Link">'. $row['link'] . '</td>';
+            echo '<td  data-label="crud">';
+            echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
+            echo ' ';
+            echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
+            echo ' ';
+            echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
+            echo '</td>';
+            echo '</tr>';
+        }
+        Database::desconectar();
+        ?>
 
 
-        </div>
-        
 
-
+                    </tbody>
                 </table>
             </div>
         </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>
