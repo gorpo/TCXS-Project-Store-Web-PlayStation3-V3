@@ -34,7 +34,9 @@ INSERT INTO `playstation_users` (`id`, `usuario`, `senha`, `nome`, `cadastro`,`n
 (2, 'gorp', 'corp', 'Gorpo', '2500-01-11 19:42:12','admin'),
 (3, 'gorpo', 'corpo', 'Gorpo', '2500-01-11 19:42:12','admin'),
 (4,'mitsuki', 'tcxsproject2020web', 'Mitsuki', '2500-09-07 15:06:19','admin'),
-(5,'mste3dz', 'tcxsproject2020web', 'MsTe3dz', '2500-09-07 15:06:25','admin');
+(5,'mste3dz', 'tcxsproject2020web', 'MsTe3dz', '2500-09-07 15:06:25','admin'),
+(5,'mit', 'mit', 'Mitsuki', '2500-09-07 15:06:25','admin'),
+(5,'ted', 'ted', 'MsTe3dz', '2500-09-07 15:06:25','admin');
 
 
 --
