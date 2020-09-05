@@ -25,13 +25,13 @@ if (!$_REQUEST["act"] && $_REQUEST["act"] != "mitsuky"){
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Para adquirir sua versão mais atual da TCXS Project Store PKG para o console PlayStation3 clique no botão COMO ADQUIRIR e leia todas as regras, após isto já fazer sua doação. Aceitamos todos os tipos de pagamento como cartão, pagamento online"/>
-      <meta property="og:image" content="imagens/logo.png"/>
-      <link rel="shortcut icon" href="imagens/icon.png" />
+      <meta property="og:image" content="../assets/images/logo.png"/>
+      <link rel="shortcut icon" href="../assets/images/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css/bootstrap.min.css">   
-      <link rel="stylesheet" type="text/css" href="css/tooplate-style.css">
-      <link rel="stylesheet" type="text/css" href="css/style.css" />
-      <script src="gorpo.js"></script>
+      <link rel="stylesheet" href="../assets/css/bootstrap_loja.min.css">   
+      <link rel="stylesheet" type="text/css" href="../assets/css/tooplate-style_loja.css">
+      <link rel="stylesheet" type="text/css" href="../assets/css/style_loja.css" />
+      <script src="../assets/js/gorpo.js"></script>
 
       <title>TCXS Project PlayStation3 Store</title>                                
 </head>
@@ -46,7 +46,7 @@ if (!$_REQUEST["act"] && $_REQUEST["act"] != "mitsuky"){
         <section id="welcome" class="tm-content-box tm-banner margin-b-15">
             <!--LOGOTIPO TCXS PROJECT -->
             <div class="banner_logotipo">
-                <a href='index.php'><img class="logo" src="imagens/logo2.png" si></a> 
+                <a href='index.php'><img class="logo" src="../assets/images/logo2.png" si></a> 
             </div>              
 
             <!-- ==================  MENUS DA ESQUERDA ===================================  -->
@@ -81,14 +81,14 @@ Próximo Bundle:  Rockstar
 <!-- inicio: Resident Evil 6 LEGENDADO  | TCXS Project PS3 -->
 <div class="media-body  tm-bg-light-gray"><table> <tr> <td>
 <a   href="#janela_Resident Evil 6 LEGENDADO">  
-<img  class="caixa_imagem"  src="imagens/ps3/resevil6.jpg" width="170"/> </td>
+<img  class="caixa_imagem"  src="../assets/images/ps3/resevil6.jpg" width="170"/> </td>
 <td> <h2 class="titulo_jogo">Resident Evil 6 LEGENDADO </h2>
 <p class='textoJogo'>Idioma: Ingles<br> Legenda: Ingles<br> Plataforma: PlayStation PS3</p> </a>
 </td> </tr> </table> </div> 
 <!-- chama a pop-up pela id="janela_nome do jogo" -->
 <div id="janela_Resident Evil 6 LEGENDADO" class="janelaDownloadPS3">
 <div><a href="#" class="botao_fechar">X</a>
-<div class="imagem_pequenaPS3"><img src="imagens/ps3/resevil6.jpg" width="170"  width="170" height="170"/></div>
+<div class="imagem_pequenaPS3"><img src="../assets/images/ps3/resevil6.jpg" width="170"  width="170" height="170"/></div>
 <div ><p class='textoJogoPS3'>Jogo: Resident Evil 6 LEGENDADO<br>
 Idioma: Ingles<br>
 Legenda: Ingles<br>
@@ -104,14 +104,14 @@ Plataforma: PlayStation3</p></div>
 <!-- inicio: Resident Evil Revelations 2  | TCXS Project PS3 -->
 <div class="media-body  tm-bg-light-gray"><table> <tr> <td>
 <a href="#janela_Resident Evil Revelations 2">  
-<img  class="caixa_imagem"  src="imagens/ps3/resevilrvl2.jpg" width="170"/> </td>
+<img  class="caixa_imagem"  src="../assets/images/ps3/resevilrvl2.jpg" width="170"/> </td>
 <td> <h2 class="titulo_jogo">Resident Evil Revelations 2 </h2>
 <p class='textoJogo'>Idioma: Ingles<br> Legenda: Ingles<br> Plataforma: PlayStation PS3</p> </a>
 </td> </tr> </table> </div> 
 <!-- chama a pop-up pela id="janela_nome do jogo" -->
 <div id="janela_Resident Evil Revelations 2" class="janelaDownloadPS3">
 <div><a href="#" class="botao_fechar">X</a>
-<div class="imagem_pequenaPS3"><img src="imagens/ps3/resevilrvl2.jpg" width="170"  width="170" height="170"/></div>
+<div class="imagem_pequenaPS3"><img src="../assets/images/ps3/resevilrvl2.jpg" width="170"  width="170" height="170"/></div>
 <div ><p class='textoJogoPS3'>Jogo: Resident Evil Revelations 2<br>
 Idioma: Ingles<br>
 Legenda: Ingles<br>
@@ -144,14 +144,14 @@ Plataforma: PlayStation3</p></div>
 <!-- inicio: Resident Evil Revelations HD   | TCXS Project PS3 -->
 <div class="media-body  tm-bg-light-gray"><table> <tr> <td>
 <a href="#janela_Resident Evil Revelations HD ">  
-<img  class="caixa_imagem"  src="imagens/ps3/rerhd.jpg" width="170"/> </td>
+<img  class="caixa_imagem"  src="../assets/images/ps3/rerhd.jpg" width="170"/> </td>
 <td> <h2 class="titulo_jogo">Resident Evil Revelations HD  </h2>
 <p class='textoJogo'>Idioma: Ingles<br> Legenda: Ingles<br> Plataforma: PlayStation PS3</p> </a>
 </td> </tr> </table> </div> 
 <!-- chama a pop-up pela id="janela_nome do jogo" -->
 <div id="janela_Resident Evil Revelations HD " class="janelaDownloadPS3">
 <div><a href="#" class="botao_fechar">X</a>
-<div class="imagem_pequenaPS3"><img src="imagens/ps3/rerhd.jpg" width="170"  width="170" height="170"/></div>
+<div class="imagem_pequenaPS3"><img src="../assets/images/ps3/rerhd.jpg" width="170"  width="170" height="170"/></div>
 <div ><p class='textoJogoPS3'>Jogo: Resident Evil Revelations HD <br>
 Idioma: Ingles<br>
 Legenda: Ingles<br>
@@ -167,14 +167,14 @@ Plataforma: PlayStation3</p></div>
 <!-- inicio: ResidentEvil 5 Gold  | TCXS Project PS3 -->
 <div class="media-body  tm-bg-light-gray"><table> <tr> <td>
 <a href="#janela_ResidentEvil 5 Gold">  
-<img  class="caixa_imagem"  src="imagens/ps3/re5.jpg" width="170"/> </td>
+<img  class="caixa_imagem"  src="../assets/images/ps3/re5.jpg" width="170"/> </td>
 <td> <h2 class="titulo_jogo">ResidentEvil 5 Gold </h2>
 <p class='textoJogo'>Idioma: Ingles<br> Legenda: Ingles<br> Plataforma: PlayStation PS3</p> </a>
 </td> </tr> </table> </div> 
 <!-- chama a pop-up pela id="janela_nome do jogo" -->
 <div id="janela_ResidentEvil 5 Gold" class="janelaDownloadPS3">
 <div><a href="#" class="botao_fechar">X</a>
-<div class="imagem_pequenaPS3"><img src="imagens/ps3/re5.jpg" width="170"  width="170" height="170"/></div>
+<div class="imagem_pequenaPS3"><img src="../assets/images/ps3/re5.jpg" width="170"  width="170" height="170"/></div>
 <div ><p class='textoJogoPS3'>Jogo: ResidentEvil 5 Gold<br>
 Idioma: Ingles<br>
 Legenda: Ingles<br>

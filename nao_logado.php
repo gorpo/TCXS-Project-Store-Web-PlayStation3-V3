@@ -22,29 +22,41 @@ session_start();
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Para adquirir sua versão mais atual da TCXS Project Store PKG para o console PlayStation3 clique no botão COMO ADQUIRIR e leia todas as regras, após isto já fazer sua doação. Aceitamos todos os tipos de pagamento como cartão, pagamento online"/>
-      <meta property="og:image" content="loja/imagens/logo.png"/>
-      <link rel="shortcut icon" href="loja/imagens/icon.png" />
+      <meta property="og:image" content="assets/imagens/logo.png"/>
+      <link rel="shortcut icon" href="assets/imagens/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
       <script src="assets/js/funcoesLogin.js"></script>
       <script src="assets/js/gorpo.js"></script>
       <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="assets/css/login.css" />
       <title>TCXS Project STORE</title>
     </head>
-<body> 
-<!-- bloqueio do click direito do mouse -->
+
+
+
+
+<body class="bghome"> 
+  <!-- bloqueio do click direito do mouse -->
 <script>document.oncontextmenu = document.body.oncontextmenu = function() {return false;}</script>
-<!-- titulo animado <h1>TCXS PROJECT</h1>-->
-<center><br><br><br><br><br><br><br><br><br><br>
-<img src="assets/logo.png">
-<div id="matrix" class="auto-style8">REALIZE UMA DOACAO PELO QRCODE E TENHA SEU LOGIN</div>
-<font face="courier new" color="Red" size"12" ></center>
-<center><img src="assets/qrcode.png" ></center>
+  <!-- função php que retorna se o usuario teve erro ao logar -->
+<div class="login">
+  <div class="login-header">
+    <br>
+    <img class='logo' src="assets/images/logo.png">
+    <div class="infoLogin"><b>REALIZE UMA DOACAO PELO QRCODE</b></div>
+  </div>
+  <center><img src="assets/images/qrcode.png" ></center>
+
+  </body>
+</html>
+
+
 
 
 
 <!-- rodape -->
 <div class="rodape">
-  <b>Caso seja um Doador apenas retorne realize seu login e desconsidere esta mensagem. Caso não tenha um login realize uma doação pelo Qrcode acima, são apenas R$15.oo</b>
+  <b>REALIZE UMA DOACAO PELO QRCODE E ADQUIRA AGORA MESMO SEU LOGIN</b>
 </div>
 
 <!--

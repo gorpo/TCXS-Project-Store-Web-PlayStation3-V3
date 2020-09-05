@@ -49,12 +49,12 @@ if(!$_SESSION['nome']) {
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Para adquirir sua versão mais atual da TCXS Project Store PKG para o console PlayStation3 clique no botão COMO ADQUIRIR e leia todas as regras, após isto já fazer sua doação. Aceitamos todos os tipos de pagamento como cartão, pagamento online"/>
-      <meta property="og:image" content="imagens/logo.png"/>
-      <link rel="shortcut icon" href="imagens/icon.png" />
+      <meta property="og:image" content="../assets/images/logo.png"/>
+      <link rel="shortcut icon" href="../assets/images/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css/bootstrap.min.css">   
-      <link rel="stylesheet" type="text/css" href="css/tooplate-style.css">
-      <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <link rel="stylesheet" href="../assets/css/bootstrap_loja.min.css">   
+      <link rel="stylesheet" type="text/css" href="../assets/css/tooplate-style_loja.css">
+      <link rel="stylesheet" type="text/css" href="../assets/css/style_loja.css" />
       <title>TCXS Project PlayStation3 Store</title>                                
 </head>
 <body>
@@ -68,7 +68,7 @@ if(!$_SESSION['nome']) {
         <section id="welcome" class="tm-content-box tm-banner margin-b-15">
             <!--LOGOTIPO TCXS PROJECT -->
             <div class="banner_logotipo">
-                <a href='index.php'><img class="logo" src="imagens/logo2.png" si></a> 
+                <a href='index.php'><img class="logo" src="../assets/images/logo2.png" si></a> 
             </div>              
 
             <!-- ==================  MENUS DA ESQUERDA ===================================  -->
@@ -103,7 +103,7 @@ Expiração: <?php echo  $data_expira_formatada ?><br>
   {
       echo '<div class="media-body  tm-bg-light-gray"><table> <tr> <td>';
       echo '<a href="'.$row['link'].'">';
-      echo '<img  class="caixa_imagem"  src="imagens/emuladores/'.$row['imagem'].'"/> </td>';
+      echo '<img  class="caixa_imagem"  src="../assets/images/emuladores/'.$row['imagem'].'"/> </td>';
       echo '<td> <h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
       echo '<p class="textoJogo">'.$row['descricao'].'</p> </a>';
       echo '</td> </tr> </table> </div> ';

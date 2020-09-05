@@ -82,8 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //================== FUNÇÃO UPLOAD DE IMAGEM | REDIMENSIONAMENTO | MARCA DAGUA TCXS ===================================
 //--------------------------------------------------->>>
 // CAMINHO PARA SALVAR A IMAGEM | CAMINHO DA MARCA DAGUA
-$targetDir = "../../../loja/imagens/ps1/"; 
-$watermarkImagePath = '../assets/images/watermark.png'; 
+$targetDir = "../../../assets/images/ps1/"; 
+$watermarkImagePath = '../../../assets/images/watermark.png'; 
 // FUNÇAO RESPONSAVEL PELO REDIMENSINAMENTO 
 function resize_image($file, $w, $h, $crop=FALSE) {
     list($width, $height) = getimagesize($file);
@@ -209,10 +209,10 @@ if(isset($_POST["submit"])){
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Sistema de administração TCXS Project"/>
-      <meta property="og:image" content="../assets/images/logo.png"/>
-      <link rel="shortcut icon" href="../assets/images/icon.png" />
+      <meta property="og:image" content="../../../assets/images/logo.png"/>
+      <link rel="shortcut icon" href="../../../assets/images/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
@@ -224,7 +224,7 @@ if(isset($_POST["submit"])){
 <!-- ============= MENUS PARA PC E CELULAR ======== --->
     <caption>
             <div class="barraTopo">
-              <img class="logo" src="../assets/images/logo_ps1.png"><br>
+              <img class="logo" src="../../../assets/images/logo_ps1.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -312,7 +312,7 @@ if(isset($_POST["submit"])){
                             if (!$statusMsg){
                              // exibiria a imagem da marca dagua 
                             //echo "<div class='inputUploadImagem'>";
-                            //echo "<img src='../assets/images/watermark.png' >";
+                            //echo "<img src='../../../assets/images/watermark.png' >";
                             //echo "</div>";
                             }else{
                               echo "<div class='inputUploadImagem'>";
@@ -383,7 +383,7 @@ if(isset($_POST["submit"])){
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -22,25 +22,23 @@ session_start();
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Para adquirir sua versão mais atual da TCXS Project Store PKG para o console PlayStation3 clique no botão COMO ADQUIRIR e leia todas as regras, após isto já fazer sua doação. Aceitamos todos os tipos de pagamento como cartão, pagamento online"/>
-      <meta property="og:image" content="assets/images/logo.png"/>
-      <link rel="shortcut icon" href="assets/images/icon.png" />
+      <meta property="og:image" content="../assets/images/logo.png"/>
+      <link rel="shortcut icon" href="../assets/images/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
-      <script src="assets/js/funcoesLogin.js"></script>
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-      <link rel="stylesheet" type="text/css" href="assets/css/login.css" />
+      <script src="../assets/js/funcoesLogin.js"></script>
+      <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="../assets/css/login.css" />
       <title>TCXS Project STORE</title>
     </head>
-<body> 
 
-
-
-
+<body style="background-color: #000000;"> <!-- class="bghome" -->
+  <!-- bloqueio do click direito do mouse -->
+<script>document.oncontextmenu = document.body.oncontextmenu = function() {return false;}</script>
   <!-- função php que retorna se o usuario teve erro ao logar -->
- 
 <div class="login">
   <div class="login-header">
     <br>
-    <img class='logo' src="assets/images/logo.png">
+    <img class='logo' src="../assets/images/logo.png">
   </div>
   <div class="login-form">
      <?php
@@ -51,20 +49,12 @@ session_start();
     endif;
     unset($_SESSION['nao_autenticado']);
   ?>
-
     <form action="login.php" method="POST" autocomplete="off">
     <input type="text" name="usuario" autocomplete="off"  placeholder="Usuário"/><br>
     <input type="password" name="senha" placeholder="Senha"/>
     <br>
     <button type="submit" id="btnhome" type="button" class="btnlogar m-b-16 ">Entrar</button>
-  </div>
-</form>
-</div>
-
-
-
-
-     
+  </div></form></div>
 
   </body>
 </html>

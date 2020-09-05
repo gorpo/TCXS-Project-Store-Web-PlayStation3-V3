@@ -22,65 +22,52 @@ session_start();
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Para adquirir sua versão mais atual da TCXS Project Store PKG para o console PlayStation3 clique no botão COMO ADQUIRIR e leia todas as regras, após isto já fazer sua doação. Aceitamos todos os tipos de pagamento como cartão, pagamento online"/>
-      <meta property="og:image" content="loja/imagens/logo.png"/>
-      <link rel="shortcut icon" href="loja/imagens/icon.png" />
+      <meta property="og:image" content="assets/imagens/logo.png"/>
+      <link rel="shortcut icon" href="assets/imagens/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
       <script src="assets/js/funcoesLogin.js"></script>
       <script src="assets/js/gorpo.js"></script>
       <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="assets/css/login.css" />
       <title>TCXS Project STORE</title>
     </head>
-<body> 
-<!-- bloqueio do click direito do mouse -->
+
+
+
+
+<body class="bghome"> 
+  <!-- bloqueio do click direito do mouse -->
 <script>document.oncontextmenu = document.body.oncontextmenu = function() {return false;}</script>
-<!-- titulo animado <h1>TCXS PROJECT</h1>-->
-<center><br><br><br><br><br><br><br><br><br><br>
-<img src="assets/logo.png">
-<div id="matrix" class="auto-style8">HAN | HEN | CFW | SEU IP: <?php echo $_SERVER['REMOTE_ADDR'] ?></div>
-<font face="courier new" color="Red" size"12" ></center><br>
-<br><br><br><br><br><br>
-<!-- sistema -->
-<center>
- <section class="hero is-success is-fullheight">
-    <div class="hero-body">  
-      <div class="container has-text-centered">
-        <div class="column is-4 is-offset-4">
+  <!-- função php que retorna se o usuario teve erro ao logar -->
+<div class="login">
+  <div class="login-header">
+    <br>
+    <img class='logo' src="assets/images/logo.png">
+    <div class="infoLogin">HAN | HEN | CFW | SEU IP: <?php echo $_SERVER['REMOTE_ADDR'] ?></div>
+  </div>
+  
+  <div class="login-form">
 
-          <!-- função php que retorna se o usuario teve erro ao logar -->
-          <?php
-            if(isset($_SESSION['nao_autenticado'])):
-          ?>
-            <div class="notification is-danger" style="font-size:20px;"><b>Usuário não cadastrado</b></div>
-          <?php
-            endif;
-            unset($_SESSION['nao_autenticado']);
-          ?>
+     <?php
+    if(isset($_SESSION['nao_autenticado'])):
+  ?>
+    <div class="notification is-danger" style="font-size:20px; color:red;"><b>Usuário não cadastrado</b></div>
+  <?php
+    endif;
+    unset($_SESSION['nao_autenticado']);
+  ?>
+    <form action="login.php" method="POST" autocomplete="off">
+    <input type="text" name="usuario" autocomplete="off"  placeholder="Usuário"/><br>
+    <input type="password" name="senha" placeholder="Senha"/>
+    <br>
+    <button type="submit" id="btnhome" type="button" class="btnlogar m-b-16 ">Entrar</button>
+  </div></form></div>
 
-        <!-- inputs para o usuario, após inserido envia os dados para serem confirmados em login.php -->  
-        <div class="box"> 
-          <form action="login.php" method="POST">
+  </body>
+</html>
 
-          <div class="wrap-input100 validate-input m-b-16" >
-            <input class="input100" type="text" name="usuario" placeholder="Usuário">
-            <span class="focus-input100"></span>
-            </span>
-          </div>
 
-          <div class="wrap-input100 validate-input m-b-16" >
-            <input class="input100" type="password" name="senha" placeholder="Senha">
-            <span class="focus-input100"></span>
-            </span>
-          </div>
 
-          <div class="field">          
-            <button type="submit" id="btnhome" type="button" class="container-login100-form-btn login100-form-btn m-b-16 ">Entrar</button>
-          </div>
-
-          </form> 
-        </div>
-      </div>
-    </div>
-</section>
 
 
 <!-- rodape -->

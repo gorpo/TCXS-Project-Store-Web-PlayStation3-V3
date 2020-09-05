@@ -52,10 +52,10 @@ if($nivel != 'admin') {
       <meta property="og:title" content="TCXS Project PlayStation3"/>
       <meta property="og:url" content="https://tcxsproject.com.br/"/>
       <meta property="og:description" content="Sistema de administração TCXS Project"/>
-      <meta property="og:image" content="assets/images/logo.png"/>
-      <link rel="shortcut icon" href="assets/images/icon.png" />
+      <meta property="og:image" content="../../assets/images/logo.png"/>
+      <link rel="shortcut icon" href="../../assets/images/icon.png" />
       <script src="https://kit.fontawesome.com/a80232805f.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+      <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
@@ -69,7 +69,7 @@ if($nivel != 'admin') {
 
           <caption>
             <div class="barraTopo">
-              <img class="logo" src="assets/images/logo_psp.png"><br>
+              <img class="logo" src="../../assets/images/logo_psp.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -93,17 +93,18 @@ if($nivel != 'admin') {
           </caption>
 
         <div class="barraBase">
-          <h2 class="tituloRedHome">Bem vindo <?php echo  $usuario ?> | Painel Administrador V:1.0</h2>
+          <h2 class="tituloRedHome">Bem vindo <?php echo  $usuario ?> <br> Painel Administrador V:1.0</h2>
           <br>
           <a href="cadastro_usuarios.php" type="btn" class="login100-form-btn m-b-16 ">Cadastro Usuarios</a>
           <a href="consulta_usuarios.php" type="btn" class="login100-form-btn m-b-16">Verifica Usuarios</a>
+          <a href="infos/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation Infos</a>
           <a href="psp/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation PSP</a>
           <a href="ps1/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation1</a>
           <a href="ps2/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation2</a>
           <a href="ps3/index.php" type="btn" class="login100-form-btn m-b-16">PlayStation3</a>
           <a href="emuladores/index.php" type="btn" class="login100-form-btn m-b-16">Emuladores</a>
           <a href="extras/index.php" type="btn" class="login100-form-btn m-b-16">Extras</a>
-          <br><br><br><br><br><br><br><br><br><br>
+          
 
 
         </div>
@@ -116,7 +117,7 @@ if($nivel != 'admin') {
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>
