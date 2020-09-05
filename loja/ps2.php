@@ -101,7 +101,8 @@ Expiração: <?php echo  $data_expira_formatada ?><br>
   foreach($pdo->query($sql)as $row)
   {
       echo '<div class="media-body  tm-bg-light-gray"><table> <tr> <td>';
-      echo '<a href="'.$row['link'].'">';
+      echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link']."'".'"'.'>';
+      //echo '<a href="'.$row['link'].'">';
       echo '<img  class="caixa_imagem"  src="../assets/images/ps2/'.$row['imagem'].'"/> </td>';
       echo '<td> <h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
       echo '<p class="textoJogo">'.$row['descricao'].'</p> </a>';

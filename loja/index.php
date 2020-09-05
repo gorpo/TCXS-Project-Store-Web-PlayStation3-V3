@@ -131,24 +131,8 @@ Expiração: <?php echo  $data_expira_formatada ?><br>
 <br><br><br><br><br><br>
 </p>
 
-
-
 </ul>
 </div></div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- final do container-fluid todo conteudo deve ficar antes desta div -->   
 </div></div>

@@ -138,6 +138,7 @@ p.textoJogo {
 /* sistema de botoes com imagem dentro do botao | sem a necessidade do botao em baixo */
 img.caixa_imagem {
   width: 150px;
+  height: 150px;
   display: block;
   background-color: #101214; 
   border: none;

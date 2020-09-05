@@ -107,103 +107,124 @@ foreach($pdo->query($sql)as $row)
   
   //FUNÇÕES PARA MOSTRAR OS BOTOES QUANTOS EXISTIR
   if ($row['link1'] != "---") {
-        echo '<a href="'.$row['link1'].'">'.$row['titulo'].' | Parte 1</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link1']."'".'"'.'>'.$row['titulo'].' | Parte 1</a>';
         }
+        
 if ($row['link2'] != "---") {
-        echo '<a href="'.$row['link2'].'">'.$row['titulo'].' | Parte 2</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link2']."'".'"'.'>'.$row['titulo'].' | Parte 2</a>';
         }
+        
 if ($row['link3'] != "---") {
-        echo '<a href="'.$row['link3'].'">'.$row['titulo'].' | Parte 3</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link3']."'".'"'.'>'.$row['titulo'].' | Parte 3</a>';
         }
+        
 if ($row['link4'] != "---") {
-        echo '<a href="'.$row['link4'].'">'.$row['titulo'].' | Parte 4</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link4']."'".'"'.'>'.$row['titulo'].' | Parte 4</a>';
         }
+        
 if ($row['link5'] != "---") {
-        echo '<a href="'.$row['link5'].'">'.$row['titulo'].' | Parte 5</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link5']."'".'"'.'>'.$row['titulo'].' | Parte 5</a>';
         }
+        
 if ($row['link6'] != "---") {
-        echo '<a href="'.$row['link6'].'">'.$row['titulo'].' | Parte 6</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link6']."'".'"'.'>'.$row['titulo'].' | Parte 6</a>';
         }
+        
 if ($row['link7'] != "---") {
-        echo '<a href="'.$row['link7'].'">'.$row['titulo'].' | Parte 7</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link7']."'".'"'.'>'.$row['titulo'].' | Parte 7</a>';
         }
+        
 if ($row['link8'] != "---") {
-        echo '<a href="'.$row['link8'].'">'.$row['titulo'].' | Parte 8</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link8']."'".'"'.'>'.$row['titulo'].' | Parte 8</a>';
         }
+        
 if ($row['link9'] != "---") {
-        echo '<a href="'.$row['link9'].'">'.$row['titulo'].' | Parte 9</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link9']."'".'"'.'>'.$row['titulo'].' | Parte 9</a>';
         }
+        
 if ($row['link10'] != "---") {
-        echo '<a href="'.$row['link10'].'">'.$row['titulo'].' | Parte 10</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link10']."'".'"'.'>'.$row['titulo'].' | Parte 10</a>';
         }
+        
 if ($row['link11'] != "---") {
-        echo '<a href="'.$row['link11'].'">'.$row['titulo'].' | Parte 11</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link11']."'".'"'.'>'.$row['titulo'].' | Parte 11</a>';
         }
+        
 if ($row['link12'] != "---") {
-        echo '<a href="'.$row['link12'].'">'.$row['titulo'].' | Parte 12</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link12']."'".'"'.'>'.$row['titulo'].' | Parte 12</a>';
         }
+        
 if ($row['link13'] != "---") {
-        echo '<a href="'.$row['link13'].'">'.$row['titulo'].' | Parte 13</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link13']."'".'"'.'>'.$row['titulo'].' | Parte 13</a>';
         }
+        
 if ($row['link14'] != "---") {
-        echo '<a href="'.$row['link14'].'">'.$row['titulo'].' | Parte 14</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link14']."'".'"'.'>'.$row['titulo'].' | Parte 14</a>';
         }
+        
 if ($row['link15'] != "---") {
-        echo '<a href="'.$row['link15'].'">'.$row['titulo'].' | Parte 15</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link15']."'".'"'.'>'.$row['titulo'].' | Parte 15</a>';
         }
+        
 if ($row['link16'] != "---") {
-        echo '<a href="'.$row['link16'].'">'.$row['titulo'].' | Parte 16</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link16']."'".'"'.'>'.$row['titulo'].' | Parte 16</a>';
         }
+        
 if ($row['link17'] != "---") {
-        echo '<a href="'.$row['link17'].'">'.$row['titulo'].' | Parte 17</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link17']."'".'"'.'>'.$row['titulo'].' | Parte 17</a>';
         }
+        
 if ($row['link18'] != "---") {
-        echo '<a href="'.$row['link18'].'">'.$row['titulo'].' | Parte 18</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link18']."'".'"'.'>'.$row['titulo'].' | Parte 18</a>';
         }
+        
 if ($row['link19'] != "---") {
-        echo '<a href="'.$row['link19'].'">'.$row['titulo'].' | Parte 19</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link19']."'".'"'.'>'.$row['titulo'].' | Parte 19</a>';
         }
+        
 if ($row['link20'] != "---") {
-        echo '<a href="'.$row['link20'].'">'.$row['titulo'].' | Parte 20</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link20']."'".'"'.'>'.$row['titulo'].' | Parte 20</a>';
         }
+        
 if ($row['link21'] != "---") {
-        echo '<a href="'.$row['link21'].'">'.$row['titulo'].' | Parte 21</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link21']."'".'"'.'>'.$row['titulo'].' | Parte 21</a>';
         }
+        
 if ($row['link22'] != "---") {
-        echo '<a href="'.$row['link22'].'">'.$row['titulo'].' | Parte 22</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link22']."'".'"'.'>'.$row['titulo'].' | Parte 22</a>';
         }
+        
 if ($row['link23'] != "---") {
-        echo '<a href="'.$row['link23'].'">'.$row['titulo'].' | Parte 23</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link23']."'".'"'.'>'.$row['titulo'].' | Parte 23</a>';
         }
+        
 if ($row['link24'] != "---") {
-        echo '<a href="'.$row['link24'].'">'.$row['titulo'].' | Parte 24</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link24']."'".'"'.'>'.$row['titulo'].' | Parte 24</a>';
         }
+        
 if ($row['link25'] != "---") {
-        echo '<a href="'.$row['link25'].'">'.$row['titulo'].' | Parte 25</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link25']."'".'"'.'>'.$row['titulo'].' | Parte 25</a>';
         }
+        
 if ($row['link26'] != "---") {
-        echo '<a href="'.$row['link26'].'">'.$row['titulo'].' | Parte 26</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link26']."'".'"'.'>'.$row['titulo'].' | Parte 26</a>';
         }
+        
 if ($row['link27'] != "---") {
-        echo '<a href="'.$row['link27'].'">'.$row['titulo'].' | Parte 27</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link27']."'".'"'.'>'.$row['titulo'].' | Parte 27</a>';
         }
+        
 if ($row['link28'] != "---") {
-        echo '<a href="'.$row['link28'].'">'.$row['titulo'].' | Parte 28</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link28']."'".'"'.'>'.$row['titulo'].' | Parte 28</a>';
         }
+        
 if ($row['link29'] != "---") {
-        echo '<a href="'.$row['link29'].'">'.$row['titulo'].' | Parte 29</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link29']."'".'"'.'>'.$row['titulo'].' | Parte 29</a>';
         }
+        
 if ($row['link30'] != "---") {
-        echo '<a href="'.$row['link30'].'">'.$row['titulo'].' | Parte 30</a>';
+        echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link30']."'".'"'.'>'.$row['titulo'].' | Parte 30</a>';
         }
-
-
-
-
-
-
-
-
 
   echo	'</div> </div> </td>  <td><h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
   echo  '<p class="textoJogo">'.$row['descricao'].'</p> </a> </td> </tr> </table> </div>';
