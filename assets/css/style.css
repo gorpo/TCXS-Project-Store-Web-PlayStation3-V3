@@ -60,6 +60,8 @@ background-size: 100%;
 }
 
 
+
+
 .tituloRedHome {
   font-family: 'Share Tech Mono', sans-serif;
   font-size: 15px;
@@ -113,6 +115,28 @@ label.titulo {
     font-size: 25px;
   
 }
+
+
+.linkCrud  {
+  padding: .35em;
+  font-family: 'Share Tech Mono', sans-serif;
+  font-size: 16px;
+  background-color: #1e1e1e;
+  color: white;
+  text-decoration: none;    
+}
+
+
+.linkCrud:hover {
+  padding: .35em;
+  font-family: 'Share Tech Mono', sans-serif;
+  font-size: 16px;
+  background-color: #1e1e1e;
+  color: red;
+  text-decoration: none;    
+}
+
+
 
 /* faz as imagens balançar */
 img:hover {

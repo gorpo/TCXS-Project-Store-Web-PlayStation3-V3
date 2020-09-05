@@ -91,9 +91,9 @@
             echo '<td data-label="Titulo">'. $row['titulo'] . '</td>';
             echo '<td data-label="descricao">'. $row['descricao'] . '</td>';
             echo '<td  data-label="Content ID">'. $row['content_id'] . '</td>';
-            echo '<td data-label="Imagem">'. $row['imagem'] . '</td>';
+            echo '<td data-label="Imagem">'.'<a class="linkCrud" href="../../../assets/images/ps2/'.$row['imagem'].'">'. $row['imagem'] . '</a></td>';
             echo '<td data-label="Data">'. $row['cadastro'] . '</td>';
-            echo '<td  data-label="Link">'. $row['link'] . '</td>';
+            echo '<td  data-label="Link">'.'<a class="linkCrud" href="'. $row['link'] . '">'. $row['link'] . '</a></td>';
             echo '<td  data-label="crud">';
             echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
             echo ' ';
