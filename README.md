@@ -76,6 +76,22 @@
 <img src="https://i.imgur.com/8cI4rvm.png" width="100%"></img><br>
 <img src="https://i.imgur.com/6wdkq4V.png" width="100%"></img><br>
 
+<code><script type="text/javascript">
+var OSNome = "";
+if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSNome="Windows 10";
+if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSNome="Windows 8";
+if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSNome="Windows 7";
+if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSNome="Windows Vista";
+if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSNome="Windows XP";
+if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSNome="Windows 2000";
+if (window.navigator.userAgent.indexOf("Mac")            != -1) OSNome="Mac/iOS";
+if (window.navigator.userAgent.indexOf("X11")            != -1) OSNome="UNIX";
+if (window.navigator.userAgent.indexOf("Linux")          != -1) OSNome="Linux";
+if (window.navigator.userAgent.indexOf("5.0 (") + 19, ua.indexOf(") Apple") != -1) OSNome="PlayStation3";
+//var fwVersion = ua.substring(ua.indexOf("5.0 (") + 19, ua.indexOf(") Apple"));
+document.write(' | Sistema: '+ OSNome);
+</script> </code>
+
 
 <h1> Comandos auxiliares Github - CLI </h1><br>
 <b>email:</b><br>
