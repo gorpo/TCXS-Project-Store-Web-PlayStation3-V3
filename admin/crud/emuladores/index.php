@@ -86,6 +86,13 @@
 
         foreach($pdo->query($sql)as $row)
         {
+          //função para pegar so a id dos links
+          if(isset(explode("/", $row['link'])[5])){
+            $link_full = explode("/", $row['link'])[5];
+            $link = explode('.', $link_full)[0];
+                }elseif (!isset(explode("/", $row['link'])[5])) {
+                  $link ='Clique aqui.';}
+
             echo '<tr>'; 
             echo '<td data-label="ID" scope="row">'. $row['id'] . '</td>';
             echo '<td data-label="Titulo">'. $row['titulo'] . '</td>';
@@ -93,12 +100,12 @@
             echo '<td  data-label="Content ID">'. $row['content_id'] . '</td>';
             echo '<td data-label="Imagem">'.'<a class="linkCrud" href="../../../assets/images/emuladores/'.$row['imagem'].'">'. $row['imagem'] . '</a></td>';
             echo '<td data-label="Data">'. $row['cadastro'] . '</td>';
-            echo '<td  data-label="Link">'.'<a class="linkCrud" href="'. $row['link'] . '">'. $row['link'] . '</a></td>';
+            echo '<td  data-label="Link">'.'<a class="linkCrud" href="'. $row['link'] . '">'. $link . '</a></td>';
             echo '<td  data-label="crud">';
             echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
-            echo ' ';
+            //echo ' ';
             echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
-            echo ' ';
+            //echo ' ';
             echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
             echo '</td>';
             echo '</tr>';

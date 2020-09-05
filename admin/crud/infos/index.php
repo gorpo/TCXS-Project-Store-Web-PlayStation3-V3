@@ -86,9 +86,9 @@
             echo '<td data-label="Informação">'. $row['informacao'] . '</td>';
             echo '<td  data-label="crud">';
             echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
-            echo ' ';
+            //echo ' ';
             echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
-            echo ' ';
+            //echo ' ';
             echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
             echo '</td>';
             echo '</tr>';

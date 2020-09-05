@@ -72,36 +72,36 @@
                   <td scope="col">CONTENT_ID</td>
                   <td scope="col">IMAGEM</td>
                   <td scope="col">DATA</td>
-                  <td scope="col">Link</td> 
-                  <!--<td scope="col">Link2</td> 
-                  <td scope="col">Link3</td> 
-                  <td scope="col">Link4</td> 
-                  <td scope="col">Link5</td> 
-                  <td scope="col">Link6</td> 
-                  <td scope="col">Link7</td> 
-                  <td scope="col">Link8</td> 
-                  <td scope="col">Link9</td> 
-                  <td scope="col">Link10</td> 
-                  <td scope="col">Link11</td> 
-                  <td scope="col">Link12</td> 
-                  <td scope="col">Link13</td> 
-                  <td scope="col">Link14</td> 
-                  <td scope="col">Link15</td> 
-                  <td scope="col">Link16</td> 
-                  <td scope="col">Link17</td> 
-                  <td scope="col">Link18</td> 
-                  <td scope="col">Link19</td> 
-                  <td scope="col">Link20</td> 
-                  <td scope="col">Link21</td> 
-                  <td scope="col">Link22</td> 
-                  <td scope="col">Link23</td> 
-                  <td scope="col">Link24</td> 
-                  <td scope="col">Link25</td> 
-                  <td scope="col">Link26</td> 
-                  <td scope="col">Link27</td> 
-                  <td scope="col">Link28</td> 
-                  <td scope="col">Link29</td> 
-                  <td scope="col">Link30</td> -->
+                  <td scope="col">dl1</td> 
+                  <td scope="col">dl2</td> 
+                  <td scope="col">dl3</td> 
+                  <td scope="col">dl4</td> 
+                  <td scope="col">dl5</td> 
+                  <td scope="col">dl6</td> 
+                  <td scope="col">dl7</td> 
+                  <td scope="col">dl8</td> 
+                  <td scope="col">dl9</td> 
+                  <td scope="col">dl10</td> 
+                  <td scope="col">dl11</td> 
+                  <td scope="col">dl12</td> 
+                  <td scope="col">dl13</td> 
+                  <td scope="col">dl14</td> 
+                  <td scope="col">dl15</td> 
+                  <td scope="col">dl16</td> 
+                  <td scope="col">dl17</td> 
+                  <td scope="col">dl18</td> 
+                  <td scope="col">dl19</td> 
+                  <td scope="col">dl20</td> 
+                  <td scope="col">dl21</td> 
+                  <td scope="col">dl22</td> 
+                  <td scope="col">dl23</td> 
+                  <td scope="col">dl24</td> 
+                  <td scope="col">dl25</td> 
+                  <td scope="col">dl26</td> 
+                  <td scope="col">dl27</td> 
+                  <td scope="col">dl28</td> 
+                  <td scope="col">dl29</td> 
+                  <td scope="col">dl30</td> 
                   <td scope="col">CRUD</td>
               </tr>
           </thead>
@@ -366,36 +366,36 @@
             
             
 
-            echo '<td  data-label="Link">'.'<a class="linkCrud" href="'. $row['link1'] . '">'. $link1 . '</a></td>';
-//echo '<td  data-label="Link2">'.'<a class="linkCrud" href="'. $row['link2'] . '">'. $link2 . '</a></td>';
-//echo '<td  data-label="Link3">'.'<a class="linkCrud" href="'. $row['link3'] . '">'. $link3 . '</a></td>';
-//echo '<td  data-label="Link4">'.'<a class="linkCrud" href="'. $row['link4'] . '">'. $link4 . '</a></td>';
-//echo '<td  data-label="Link5">'.'<a class="linkCrud" href="'. $row['link5'] . '">'. $link5 . '</a></td>';
-//echo '<td  data-label="Link6">'.'<a class="linkCrud" href="'. $row['link6'] . '">'. $link6 . '</a></td>';
-//echo '<td  data-label="Link7">'.'<a class="linkCrud" href="'. $row['link7'] . '">'. $link7 . '</a></td>';
-//echo '<td  data-label="Link8">'.'<a class="linkCrud" href="'. $row['link8'] . '">'. $link8 . '</a></td>';
-//echo '<td  data-label="Link9">'.'<a class="linkCrud" href="'. $row['link9'] . '">'. $link9 . '</a></td>';
-//echo '<td  data-label="Link10">'.'<a class="linkCrud" href="'. $row['link10'] . '">'. $link10 . '</a></td>';
-//echo '<td  data-label="Link11">'.'<a class="linkCrud" href="'. $row['link11'] . '">'. $link11 . '</a></td>';
-//echo '<td  data-label="Link12">'.'<a class="linkCrud" href="'. $row['link12'] . '">'. $link12 . '</a></td>';
-//echo '<td  data-label="Link13">'.'<a class="linkCrud" href="'. $row['link13'] . '">'. $link13 . '</a></td>';
-//echo '<td  data-label="Link14">'.'<a class="linkCrud" href="'. $row['link14'] . '">'. $link14 . '</a></td>';
-//echo '<td  data-label="Link15">'.'<a class="linkCrud" href="'. $row['link15'] . '">'. $link15 . '</a></td>';
-//echo '<td  data-label="Link16">'.'<a class="linkCrud" href="'. $row['link16'] . '">'. $link16 . '</a></td>';
-//echo '<td  data-label="Link17">'.'<a class="linkCrud" href="'. $row['link17'] . '">'. $link17 . '</a></td>';
-//echo '<td  data-label="Link18">'.'<a class="linkCrud" href="'. $row['link18'] . '">'. $link18 . '</a></td>';
-//echo '<td  data-label="Link19">'.'<a class="linkCrud" href="'. $row['link19'] . '">'. $link19 . '</a></td>';
-//echo '<td  data-label="Link20">'.'<a class="linkCrud" href="'. $row['link20'] . '">'. $link20 . '</a></td>';
-//echo '<td  data-label="Link21">'.'<a class="linkCrud" href="'. $row['link21'] . '">'. $link21 . '</a></td>';
-//echo '<td  data-label="Link22">'.'<a class="linkCrud" href="'. $row['link22'] . '">'. $link22 . '</a></td>';
-//echo '<td  data-label="Link23">'.'<a class="linkCrud" href="'. $row['link23'] . '">'. $link23 . '</a></td>';
-//echo '<td  data-label="Link24">'.'<a class="linkCrud" href="'. $row['link24'] . '">'. $link24 . '</a></td>';
-//echo '<td  data-label="Link25">'.'<a class="linkCrud" href="'. $row['link25'] . '">'. $link25 . '</a></td>';
-//echo '<td  data-label="Link26">'.'<a class="linkCrud" href="'. $row['link26'] . '">'. $link26 . '</a></td>';
-//echo '<td  data-label="Link27">'.'<a class="linkCrud" href="'. $row['link27'] . '">'. $link27 . '</a></td>';
-//echo '<td  data-label="Link28">'.'<a class="linkCrud" href="'. $row['link28'] . '">'. $link28 . '</a></td>';
-//echo '<td  data-label="Link29">'.'<a class="linkCrud" href="'. $row['link29'] . '">'. $link29 . '</a></td>';
-//echo '<td  data-label="Link30">'.'<a class="linkCrud" href="'. $row['link30'] . '">'. $link30 . '</a></td>';
+            echo '<td  data-label="Link1">'.'<a class="linkCrud" href="'. $row['link1'] . '">'. $link1 . '</a></td>';
+echo '<td  data-label="Link2">'.'<a class="linkCrud" href="'. $row['link2'] . '">'. $link2 . '</a></td>';
+echo '<td  data-label="Link3">'.'<a class="linkCrud" href="'. $row['link3'] . '">'. $link3 . '</a></td>';
+echo '<td  data-label="Link4">'.'<a class="linkCrud" href="'. $row['link4'] . '">'. $link4 . '</a></td>';
+echo '<td  data-label="Link5">'.'<a class="linkCrud" href="'. $row['link5'] . '">'. $link5 . '</a></td>';
+echo '<td  data-label="Link6">'.'<a class="linkCrud" href="'. $row['link6'] . '">'. $link6 . '</a></td>';
+echo '<td  data-label="Link7">'.'<a class="linkCrud" href="'. $row['link7'] . '">'. $link7 . '</a></td>';
+echo '<td  data-label="Link8">'.'<a class="linkCrud" href="'. $row['link8'] . '">'. $link8 . '</a></td>';
+echo '<td  data-label="Link9">'.'<a class="linkCrud" href="'. $row['link9'] . '">'. $link9 . '</a></td>';
+echo '<td  data-label="Link10">'.'<a class="linkCrud" href="'. $row['link10'] . '">'. $link10 . '</a></td>';
+echo '<td  data-label="Link11">'.'<a class="linkCrud" href="'. $row['link11'] . '">'. $link11 . '</a></td>';
+echo '<td  data-label="Link12">'.'<a class="linkCrud" href="'. $row['link12'] . '">'. $link12 . '</a></td>';
+echo '<td  data-label="Link13">'.'<a class="linkCrud" href="'. $row['link13'] . '">'. $link13 . '</a></td>';
+echo '<td  data-label="Link14">'.'<a class="linkCrud" href="'. $row['link14'] . '">'. $link14 . '</a></td>';
+echo '<td  data-label="Link15">'.'<a class="linkCrud" href="'. $row['link15'] . '">'. $link15 . '</a></td>';
+echo '<td  data-label="Link16">'.'<a class="linkCrud" href="'. $row['link16'] . '">'. $link16 . '</a></td>';
+echo '<td  data-label="Link17">'.'<a class="linkCrud" href="'. $row['link17'] . '">'. $link17 . '</a></td>';
+echo '<td  data-label="Link18">'.'<a class="linkCrud" href="'. $row['link18'] . '">'. $link18 . '</a></td>';
+echo '<td  data-label="Link19">'.'<a class="linkCrud" href="'. $row['link19'] . '">'. $link19 . '</a></td>';
+echo '<td  data-label="Link20">'.'<a class="linkCrud" href="'. $row['link20'] . '">'. $link20 . '</a></td>';
+echo '<td  data-label="Link21">'.'<a class="linkCrud" href="'. $row['link21'] . '">'. $link21 . '</a></td>';
+echo '<td  data-label="Link22">'.'<a class="linkCrud" href="'. $row['link22'] . '">'. $link22 . '</a></td>';
+echo '<td  data-label="Link23">'.'<a class="linkCrud" href="'. $row['link23'] . '">'. $link23 . '</a></td>';
+echo '<td  data-label="Link24">'.'<a class="linkCrud" href="'. $row['link24'] . '">'. $link24 . '</a></td>';
+echo '<td  data-label="Link25">'.'<a class="linkCrud" href="'. $row['link25'] . '">'. $link25 . '</a></td>';
+echo '<td  data-label="Link26">'.'<a class="linkCrud" href="'. $row['link26'] . '">'. $link26 . '</a></td>';
+echo '<td  data-label="Link27">'.'<a class="linkCrud" href="'. $row['link27'] . '">'. $link27 . '</a></td>';
+echo '<td  data-label="Link28">'.'<a class="linkCrud" href="'. $row['link28'] . '">'. $link28 . '</a></td>';
+echo '<td  data-label="Link29">'.'<a class="linkCrud" href="'. $row['link29'] . '">'. $link29 . '</a></td>';
+echo '<td  data-label="Link30">'.'<a class="linkCrud" href="'. $row['link30'] . '">'. $link30 . '</a></td>';
 
             echo '<td  data-label="crud">';
             echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
