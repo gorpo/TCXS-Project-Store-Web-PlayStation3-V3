@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <caption>
             <div class="barraTopo">
-              <img class="logo" src="../../assets/images/logo_psp.png"><br>
+              <img class="logo" src="../../assets/images/logo_cadastrouser.png"><br>
                 <!-- BARRA DE NAVEGAÇÃO DOS MENUS -->
                 <div class="menu-content"> <label class="open-menu-all" for="open-menu-all">
                      <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />

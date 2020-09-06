@@ -33,12 +33,18 @@ background-size: 100%;
 }
 
 .blocoDadosInputs{
-  display: inline-block; width: 95%; margin: 0 auto; padding: 10px;margin-left: 2.5%;
-  background: #232526;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    display: inline-block;
+    width: 95%;
+    margin: 0 auto; 
+    padding: 10px;
+    margin-left: 2.5%;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+
+
 .titulo {
   font-family: 'Share Tech Mono', sans-serif;
   color: rgb(255, 255, 255);
@@ -160,7 +166,7 @@ img.caixa_imagem {
   display: block;
   background-color: #101214; 
   border: none;
-  margin-left: 90px;
+  margin-left: 80px;
 }
 
 
@@ -368,15 +374,20 @@ table td {
   text-align: center;
 }
 
+
+.labelImagem {
+  position: absolute;
+  left:  0px;
+  margin-left: 8%;
+}
+
+
 table td.preto {
   padding: .625em;
   text-align: center;
     background-color: #000000;
 }
 
-table td {
-  padding: .625em;
-  text-align: center;}
 
 .encolheTabelaX{
   white-space: nowrap;

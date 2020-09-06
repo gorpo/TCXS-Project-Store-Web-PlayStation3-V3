@@ -71,7 +71,7 @@ if(!$_SESSION['nome']) {
         <!-- colunas do topo -->
           <thead>
               <tr>
-                  <td scope="col">IMAGEM</td>
+                  <td scope="col" class="labelImagem">IMAGEM</td>
                   <td scope="col">DADOS</td>
                   <td scope="col">OPÇÕES</td>
               </tr>
