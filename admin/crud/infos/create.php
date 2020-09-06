@@ -7,6 +7,12 @@
 <!-- @Gorpo Orko - 2020 -->
 
 <?php
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+}
+
 require '../../../database.php';
 //Acompanha os erros de validação
 //id informacao descricao content_id imagem_db imagem link

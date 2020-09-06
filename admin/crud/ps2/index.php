@@ -5,7 +5,13 @@
         ██║   ╚██████╗██╔╝ ██╗███████║    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
         ╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   -->
 <!-- @Gorpo Orko - 2020 -->
-
+<?php 
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+}
+ ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -66,53 +72,38 @@
         <!-- colunas do topo -->
           <thead>
               <tr>
-                  <td scope="col">Id</td>
-                  <td scope="col">TITULO</td>
-                  <td scope="col">DESCRIÇÃO</td>
-                  <td scope="col">CONTENT ID</td>
                   <td scope="col">IMAGEM</td>
-                  <td scope="col">DATA</td>
-                  <td scope="col">LINK</td>
-                  <td scope="col">CRUD</td>
+                  <td scope="col">DADOS</td>
+                  <td scope="col">OPÇÕES</td>
               </tr>
           </thead>
           <tbody>
 
-        <!-- codigo php que chama as tabelas -->                      
-        <?php
-        include '../../../database.php';
-        $pdo = Database::conectar();
-        $sql = 'SELECT * FROM playstation_ps2 ORDER BY id DESC';
+        <!-- ============================== CODIGO PHP MYSQL JOGOS PARA DOWNLOAD  ==============================   -->
+  <?php
+  include('../../../database.php');
+  $pdo = Database::conectar();
+  $sql = 'SELECT * FROM playstation_ps2 ORDER BY titulo ASC';
 
-        foreach($pdo->query($sql)as $row)
-        {
-          //função para pegar so a id dos links
-          if(isset(explode("/", $row['link'])[5])){
-            $link_full = explode("/", $row['link'])[5];
-            $link = explode('.', $link_full)[0];
-                }elseif (!isset(explode("/", $row['link'])[5])) {
-                  $link ='Clique aqui.';}
-
-            echo '<tr>'; 
-            echo '<td data-label="ID" scope="row">'. $row['id'] . '</td>';
-            echo '<td data-label="Titulo">'. $row['titulo'] . '</td>';
-            echo '<td data-label="descricao">'. $row['descricao'] . '</td>';
-            echo '<td  data-label="Content ID">'. $row['content_id'] . '</td>';
-            echo '<td data-label="Imagem">'.'<a class="linkCrud" href="../../../assets/images/ps2/'.$row['imagem'].'">'. $row['imagem'] . '</a></td>';
-            echo '<td data-label="Data">'. $row['cadastro'] . '</td>';
-            echo '<td  data-label="Link">'.'<a class="linkCrud" href="'. $row['link'] . '">'. $link. '</a></td>';
-            echo '<td  data-label="crud">';
-            echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
-            //echo ' ';
-            echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
-            //echo ' ';
-            echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
-            echo '</td>';
-            echo '</tr>';
-        }
-        database::desconectar();
-        ?>
-
+  foreach($pdo->query($sql)as $row)
+  {   
+      echo '<table> <tr> <td class="preto">';
+      echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link']."'".'"'.'>';
+      //echo '<a href="'.$row['link'].'">';
+      echo '<img  class="caixa_imagem"  src="../../../assets/images/ps2/'.$row['imagem'].'"/> </td>';
+      echo '<td class="preto"> <h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
+      echo '<p class="textoJogo">'.$row['descricao'].'</p> </a>';
+      echo '<td  data-label="" class="preto">';
+      echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
+      echo ' ';
+      echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
+      echo ' ';
+      echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
+      echo '</td>';
+      echo '</td> </tr> </table>  ';
+  }
+  Database::desconectar();
+  ?>
 
 
                     </tbody>

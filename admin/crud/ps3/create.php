@@ -7,6 +7,13 @@
 <!-- @Gorpo Orko - 2020 -->
 
 <?php
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+}
+
+
 require '../../../database.php';
 //Acompanha os erros de validação
 //id titulo descricao content_id imagem_db imagem link
@@ -602,7 +609,7 @@ if(isset($_POST["submit"])){
         <label class="titulo">1º Link do jogo</label>
             <div class="controls">
                 <input class="input100"  name="link1" type="text" placeholder="Insira o link 1"
-                value="<?php echo !empty($link1) ? $link1 : ''; ?>">
+                value="<?php echo !empty($link1) ? $link1 : ''; ?>" autofocus>
                 <?php if (!empty($link1Erro)): ?>
                 <span class="text-danger"><?php echo $link1Erro; ?></span>
                 <?php endif; ?>

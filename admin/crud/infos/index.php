@@ -5,7 +5,13 @@
         ██║   ╚██████╗██╔╝ ██╗███████║    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
         ╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   -->
 <!-- @Gorpo Orko - 2020 -->
-
+<?php 
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+}
+ ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -66,7 +72,7 @@
         <!-- colunas do topo -->
           <thead>
               <tr>
-                  <td scope="col">Id</td>
+                  <td scope="col">ID</td>
                   <td scope="col">INFORMAÇÃO</td>
                   <td scope="col">CRUD</td>
               </tr>

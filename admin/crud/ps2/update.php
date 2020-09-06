@@ -10,7 +10,11 @@
 
 
 <?php
-
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+}
 require '../../../database.php';
 
 $id = null;

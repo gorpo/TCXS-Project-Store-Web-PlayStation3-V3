@@ -5,7 +5,12 @@
         ██║   ╚██████╗██╔╝ ██╗███████║    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
         ╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   -->
 <!-- @Gorpo Orko - 2020 -->
-
+<?php 
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+} ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,362 +68,168 @@
             <a href="create.php" type="btn" class="login100-form-btn m-b-16">ADICIONAR JOGO PS3</a>
           </caption>
 
-        <!-- colunas do topo -->
+       <!-- colunas do topo -->
           <thead>
               <tr>
-                  <td scope="col">Id</td>
-                  <td scope="col">TITULO</td>
-                  <td scope="col">DESCRIÇÃO</td>
-                  <td scope="col">CONTENT_ID</td>
                   <td scope="col">IMAGEM</td>
-                  <td scope="col">DATA</td>
-                  <td scope="col">Link</td> 
-                  <!--<td scope="col">Link2</td> 
-                  <td scope="col">Link3</td> 
-                  <td scope="col">Link4</td> 
-                  <td scope="col">Link5</td> 
-                  <td scope="col">Link6</td> 
-                  <td scope="col">Link7</td> 
-                  <td scope="col">Link8</td> 
-                  <td scope="col">Link9</td> 
-                  <td scope="col">Link10</td> 
-                  <td scope="col">Link11</td> 
-                  <td scope="col">Link12</td> 
-                  <td scope="col">Link13</td> 
-                  <td scope="col">Link14</td> 
-                  <td scope="col">Link15</td> 
-                  <td scope="col">Link16</td> 
-                  <td scope="col">Link17</td> 
-                  <td scope="col">Link18</td> 
-                  <td scope="col">Link19</td> 
-                  <td scope="col">Link20</td> 
-                  <td scope="col">Link21</td> 
-                  <td scope="col">Link22</td> 
-                  <td scope="col">Link23</td> 
-                  <td scope="col">Link24</td> 
-                  <td scope="col">Link25</td> 
-                  <td scope="col">Link26</td> 
-                  <td scope="col">Link27</td> 
-                  <td scope="col">Link28</td> 
-                  <td scope="col">Link29</td> 
-                  <td scope="col">Link30</td> -->
-                  <td scope="col">CRUD</td>
+                  <td scope="col">DADOS</td>
+                  <td scope="col">OPÇÕES</td>
               </tr>
           </thead>
           <tbody>
-
-        <!-- codigo php que chama as tabelas -->                      
+<!-- ============================== CODIGO PHP MYSQL JOGOS PARA DOWNLOAD  ==============================   -->
+                     
         <?php
-        include '../../../database.php';
+        include('../../../database.php');
         $pdo = Database::conectar();
-        $sql = 'SELECT * FROM playstation_ps3 ORDER BY id DESC';
-
+        $sql = 'SELECT * FROM playstation_ps3 ORDER BY titulo ASC';
         foreach($pdo->query($sql)as $row)
         {
-          //função para pegar so a id do link1
-              if(isset(explode('/', $row['link1'])[5])){
-                $link1_full = explode('/', $row['link1'])[5];
-                $link1 = explode('.', $link1_full)[0];
-                    }elseif (!isset(explode('/', $row['link1'])[5])) {
-                      $link1 = $row['link1'];}
-                      
+          echo '<table> <tr> <td class="preto">';
+          echo '<div class="dropdown"> <img  class="caixa_imagemPs3crud" class="dropbdtn" src="../../../assets/images/ps3/'.$row['imagem'].'" width="170" width="170"/>';
+          echo '<div class="dropdown-content">';
+          
+          //FUNÇÕES PARA MOSTRAR OS BOTOES QUANTOS EXISTIR
+          if ($row['link1'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link1']."'".'"'.'>'.$row['titulo'].' | Parte 1</a>';
+                }
+                
+        if ($row['link2'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link2']."'".'"'.'>'.$row['titulo'].' | Parte 2</a>';
+                }
+                
+        if ($row['link3'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link3']."'".'"'.'>'.$row['titulo'].' | Parte 3</a>';
+                }
+                
+        if ($row['link4'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link4']."'".'"'.'>'.$row['titulo'].' | Parte 4</a>';
+                }
+                
+        if ($row['link5'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link5']."'".'"'.'>'.$row['titulo'].' | Parte 5</a>';
+                }
+                
+        if ($row['link6'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link6']."'".'"'.'>'.$row['titulo'].' | Parte 6</a>';
+                }
+                
+        if ($row['link7'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link7']."'".'"'.'>'.$row['titulo'].' | Parte 7</a>';
+                }
+                
+        if ($row['link8'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link8']."'".'"'.'>'.$row['titulo'].' | Parte 8</a>';
+                }
+                
+        if ($row['link9'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link9']."'".'"'.'>'.$row['titulo'].' | Parte 9</a>';
+                }
+                
+        if ($row['link10'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link10']."'".'"'.'>'.$row['titulo'].' | Parte 10</a>';
+                }
+                
+        if ($row['link11'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link11']."'".'"'.'>'.$row['titulo'].' | Parte 11</a>';
+                }
+                
+        if ($row['link12'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link12']."'".'"'.'>'.$row['titulo'].' | Parte 12</a>';
+                }
+                
+        if ($row['link13'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link13']."'".'"'.'>'.$row['titulo'].' | Parte 13</a>';
+                }
+                
+        if ($row['link14'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link14']."'".'"'.'>'.$row['titulo'].' | Parte 14</a>';
+                }
+                
+        if ($row['link15'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link15']."'".'"'.'>'.$row['titulo'].' | Parte 15</a>';
+                }
+                
+        if ($row['link16'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link16']."'".'"'.'>'.$row['titulo'].' | Parte 16</a>';
+                }
+                
+        if ($row['link17'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link17']."'".'"'.'>'.$row['titulo'].' | Parte 17</a>';
+                }
+                
+        if ($row['link18'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link18']."'".'"'.'>'.$row['titulo'].' | Parte 18</a>';
+                }
+                
+        if ($row['link19'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link19']."'".'"'.'>'.$row['titulo'].' | Parte 19</a>';
+                }
+                
+        if ($row['link20'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link20']."'".'"'.'>'.$row['titulo'].' | Parte 20</a>';
+                }
+                
+        if ($row['link21'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link21']."'".'"'.'>'.$row['titulo'].' | Parte 21</a>';
+                }
+                
+        if ($row['link22'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link22']."'".'"'.'>'.$row['titulo'].' | Parte 22</a>';
+                }
+                
+        if ($row['link23'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link23']."'".'"'.'>'.$row['titulo'].' | Parte 23</a>';
+                }
+                
+        if ($row['link24'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link24']."'".'"'.'>'.$row['titulo'].' | Parte 24</a>';
+                }
+                
+        if ($row['link25'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link25']."'".'"'.'>'.$row['titulo'].' | Parte 25</a>';
+                }
+                
+        if ($row['link26'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link26']."'".'"'.'>'.$row['titulo'].' | Parte 26</a>';
+                }
+                
+        if ($row['link27'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link27']."'".'"'.'>'.$row['titulo'].' | Parte 27</a>';
+                }
+                
+        if ($row['link28'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link28']."'".'"'.'>'.$row['titulo'].' | Parte 28</a>';
+                }
+                
+        if ($row['link29'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link29']."'".'"'.'>'.$row['titulo'].' | Parte 29</a>';
+                }
+                
+        if ($row['link30'] != "---") {
+                echo " <a href='javascript:#tcxsproject'". 'onclick="location.href='."'".$row['link30']."'".'"'.'>'.$row['titulo'].' | Parte 30</a>';
+                }
 
-              //função para pegar so a id do link2
-              if(isset(explode('/', $row['link2'])[5])){
-                $link2_full = explode('/', $row['link2'])[5];
-                $link2 = explode('.', $link2_full)[0];
-                    }elseif (!isset(explode('/', $row['link2'])[5])) {
-                      $link2 = $row['link2'];}
-                      
-
-              //função para pegar so a id do link3
-              if(isset(explode('/', $row['link3'])[5])){
-                $link3_full = explode('/', $row['link3'])[5];
-                $link3 = explode('.', $link3_full)[0];
-                    }elseif (!isset(explode('/', $row['link3'])[5])) {
-                      $link3 = $row['link3'];}
-                      
-
-              //função para pegar so a id do link4
-              if(isset(explode('/', $row['link4'])[5])){
-                $link4_full = explode('/', $row['link4'])[5];
-                $link4 = explode('.', $link4_full)[0];
-                    }elseif (!isset(explode('/', $row['link4'])[5])) {
-                      $link4 = $row['link4'];}
-                      
-
-              //função para pegar so a id do link5
-              if(isset(explode('/', $row['link5'])[5])){
-                $link5_full = explode('/', $row['link5'])[5];
-                $link5 = explode('.', $link5_full)[0];
-                    }elseif (!isset(explode('/', $row['link5'])[5])) {
-                      $link5 = $row['link5'];}
-                      
-
-              //função para pegar so a id do link6
-              if(isset(explode('/', $row['link6'])[5])){
-                $link6_full = explode('/', $row['link6'])[5];
-                $link6 = explode('.', $link6_full)[0];
-                    }elseif (!isset(explode('/', $row['link6'])[5])) {
-                      $link6 = $row['link6'];}
-                      
-
-              //função para pegar so a id do link7
-              if(isset(explode('/', $row['link7'])[5])){
-                $link7_full = explode('/', $row['link7'])[5];
-                $link7 = explode('.', $link7_full)[0];
-                    }elseif (!isset(explode('/', $row['link7'])[5])) {
-                      $link7 = $row['link7'];}
-                      
-
-              //função para pegar so a id do link8
-              if(isset(explode('/', $row['link8'])[5])){
-                $link8_full = explode('/', $row['link8'])[5];
-                $link8 = explode('.', $link8_full)[0];
-                    }elseif (!isset(explode('/', $row['link8'])[5])) {
-                      $link8 = $row['link8'];}
-                      
-
-              //função para pegar so a id do link9
-              if(isset(explode('/', $row['link9'])[5])){
-                $link9_full = explode('/', $row['link9'])[5];
-                $link9 = explode('.', $link9_full)[0];
-                    }elseif (!isset(explode('/', $row['link9'])[5])) {
-                      $link9 = $row['link9'];}
-                      
-
-              //função para pegar so a id do link10
-              if(isset(explode('/', $row['link10'])[5])){
-                $link10_full = explode('/', $row['link10'])[5];
-                $link10 = explode('.', $link10_full)[0];
-                    }elseif (!isset(explode('/', $row['link10'])[5])) {
-                      $link10 = $row['link10'];}
-                      
-
-              //função para pegar so a id do link11
-              if(isset(explode('/', $row['link11'])[5])){
-                $link11_full = explode('/', $row['link11'])[5];
-                $link11 = explode('.', $link11_full)[0];
-                    }elseif (!isset(explode('/', $row['link11'])[5])) {
-                      $link11 = $row['link11'];}
-                      
-
-              //função para pegar so a id do link12
-              if(isset(explode('/', $row['link12'])[5])){
-                $link12_full = explode('/', $row['link12'])[5];
-                $link12 = explode('.', $link12_full)[0];
-                    }elseif (!isset(explode('/', $row['link12'])[5])) {
-                      $link12 = $row['link12'];}
-                      
-
-              //função para pegar so a id do link13
-              if(isset(explode('/', $row['link13'])[5])){
-                $link13_full = explode('/', $row['link13'])[5];
-                $link13 = explode('.', $link13_full)[0];
-                    }elseif (!isset(explode('/', $row['link13'])[5])) {
-                      $link13 = $row['link13'];}
-                      
-
-              //função para pegar so a id do link14
-              if(isset(explode('/', $row['link14'])[5])){
-                $link14_full = explode('/', $row['link14'])[5];
-                $link14 = explode('.', $link14_full)[0];
-                    }elseif (!isset(explode('/', $row['link14'])[5])) {
-                      $link14 = $row['link14'];}
-                      
-
-              //função para pegar so a id do link15
-              if(isset(explode('/', $row['link15'])[5])){
-                $link15_full = explode('/', $row['link15'])[5];
-                $link15 = explode('.', $link15_full)[0];
-                    }elseif (!isset(explode('/', $row['link15'])[5])) {
-                      $link15 = $row['link15'];}
-                      
-
-              //função para pegar so a id do link16
-              if(isset(explode('/', $row['link16'])[5])){
-                $link16_full = explode('/', $row['link16'])[5];
-                $link16 = explode('.', $link16_full)[0];
-                    }elseif (!isset(explode('/', $row['link16'])[5])) {
-                      $link16 = $row['link16'];}
-                      
-
-              //função para pegar so a id do link17
-              if(isset(explode('/', $row['link17'])[5])){
-                $link17_full = explode('/', $row['link17'])[5];
-                $link17 = explode('.', $link17_full)[0];
-                    }elseif (!isset(explode('/', $row['link17'])[5])) {
-                      $link17 = $row['link17'];}
-                      
-
-              //função para pegar so a id do link18
-              if(isset(explode('/', $row['link18'])[5])){
-                $link18_full = explode('/', $row['link18'])[5];
-                $link18 = explode('.', $link18_full)[0];
-                    }elseif (!isset(explode('/', $row['link18'])[5])) {
-                      $link18 = $row['link18'];}
-                      
-
-              //função para pegar so a id do link19
-              if(isset(explode('/', $row['link19'])[5])){
-                $link19_full = explode('/', $row['link19'])[5];
-                $link19 = explode('.', $link19_full)[0];
-                    }elseif (!isset(explode('/', $row['link19'])[5])) {
-                      $link19 = $row['link19'];}
-                      
-
-              //função para pegar so a id do link20
-              if(isset(explode('/', $row['link20'])[5])){
-                $link20_full = explode('/', $row['link20'])[5];
-                $link20 = explode('.', $link20_full)[0];
-                    }elseif (!isset(explode('/', $row['link20'])[5])) {
-                      $link20 = $row['link20'];}
-                      
-
-              //função para pegar so a id do link21
-              if(isset(explode('/', $row['link21'])[5])){
-                $link21_full = explode('/', $row['link21'])[5];
-                $link21 = explode('.', $link21_full)[0];
-                    }elseif (!isset(explode('/', $row['link21'])[5])) {
-                      $link21 = $row['link21'];}
-                      
-
-              //função para pegar so a id do link22
-              if(isset(explode('/', $row['link22'])[5])){
-                $link22_full = explode('/', $row['link22'])[5];
-                $link22 = explode('.', $link22_full)[0];
-                    }elseif (!isset(explode('/', $row['link22'])[5])) {
-                      $link22 = $row['link22'];}
-                      
-
-              //função para pegar so a id do link23
-              if(isset(explode('/', $row['link23'])[5])){
-                $link23_full = explode('/', $row['link23'])[5];
-                $link23 = explode('.', $link23_full)[0];
-                    }elseif (!isset(explode('/', $row['link23'])[5])) {
-                      $link23 = $row['link23'];}
-                      
-
-              //função para pegar so a id do link24
-              if(isset(explode('/', $row['link24'])[5])){
-                $link24_full = explode('/', $row['link24'])[5];
-                $link24 = explode('.', $link24_full)[0];
-                    }elseif (!isset(explode('/', $row['link24'])[5])) {
-                      $link24 = $row['link24'];}
-                      
-
-              //função para pegar so a id do link25
-              if(isset(explode('/', $row['link25'])[5])){
-                $link25_full = explode('/', $row['link25'])[5];
-                $link25 = explode('.', $link25_full)[0];
-                    }elseif (!isset(explode('/', $row['link25'])[5])) {
-                      $link25 = $row['link25'];}
-                      
-
-              //função para pegar so a id do link26
-              if(isset(explode('/', $row['link26'])[5])){
-                $link26_full = explode('/', $row['link26'])[5];
-                $link26 = explode('.', $link26_full)[0];
-                    }elseif (!isset(explode('/', $row['link26'])[5])) {
-                      $link26 = $row['link26'];}
-                      
-
-              //função para pegar so a id do link27
-              if(isset(explode('/', $row['link27'])[5])){
-                $link27_full = explode('/', $row['link27'])[5];
-                $link27 = explode('.', $link27_full)[0];
-                    }elseif (!isset(explode('/', $row['link27'])[5])) {
-                      $link27 = $row['link27'];}
-                      
-
-              //função para pegar so a id do link28
-              if(isset(explode('/', $row['link28'])[5])){
-                $link28_full = explode('/', $row['link28'])[5];
-                $link28 = explode('.', $link28_full)[0];
-                    }elseif (!isset(explode('/', $row['link28'])[5])) {
-                      $link28 = $row['link28'];}
-                      
-
-              //função para pegar so a id do link29
-              if(isset(explode('/', $row['link29'])[5])){
-                $link29_full = explode('/', $row['link29'])[5];
-                $link29 = explode('.', $link29_full)[0];
-                    }elseif (!isset(explode('/', $row['link29'])[5])) {
-                      $link29 = $row['link29'];}
-                      
-
-              //função para pegar so a id do link30
-              if(isset(explode('/', $row['link30'])[5])){
-                $link30_full = explode('/', $row['link30'])[5];
-                $link30 = explode('.', $link30_full)[0];
-                    }elseif (!isset(explode('/', $row['link30'])[5])) {
-                      $link30 = $row['link30'];}
-
-
-
-            echo '<tr>'; 
-            echo '<td data-label="ID" scope="row">'. $row['id'] . '</td>';
-            echo '<td data-label="Titulo">'. $row['titulo'] . '</td>';
-            echo '<td data-label="descricao">'. $row['descricao'] . '</td>';
-            echo '<td  data-label="Content ID">'. $row['content_id'] . '</td>';
-            echo '<td data-label="Imagem">'.'<a class="linkCrud" href="../../../assets/images/ps3/'.$row['imagem'].'">'. $row['imagem'] . '</a></td>';
-            echo '<td data-label="Data">'. $row['cadastro'] . '</td>';
-            
-            
-
-            echo '<td  data-label="Link">'.'<a class="linkCrud" href="'. $row['link1'] . '">'. $link1 . '</a></td>';
-//echo '<td  data-label="Link2">'.'<a class="linkCrud" href="'. $row['link2'] . '">'. $link2 . '</a></td>';
-//echo '<td  data-label="Link3">'.'<a class="linkCrud" href="'. $row['link3'] . '">'. $link3 . '</a></td>';
-//echo '<td  data-label="Link4">'.'<a class="linkCrud" href="'. $row['link4'] . '">'. $link4 . '</a></td>';
-//echo '<td  data-label="Link5">'.'<a class="linkCrud" href="'. $row['link5'] . '">'. $link5 . '</a></td>';
-//echo '<td  data-label="Link6">'.'<a class="linkCrud" href="'. $row['link6'] . '">'. $link6 . '</a></td>';
-//echo '<td  data-label="Link7">'.'<a class="linkCrud" href="'. $row['link7'] . '">'. $link7 . '</a></td>';
-//echo '<td  data-label="Link8">'.'<a class="linkCrud" href="'. $row['link8'] . '">'. $link8 . '</a></td>';
-//echo '<td  data-label="Link9">'.'<a class="linkCrud" href="'. $row['link9'] . '">'. $link9 . '</a></td>';
-//echo '<td  data-label="Link10">'.'<a class="linkCrud" href="'. $row['link10'] . '">'. $link10 . '</a></td>';
-//echo '<td  data-label="Link11">'.'<a class="linkCrud" href="'. $row['link11'] . '">'. $link11 . '</a></td>';
-//echo '<td  data-label="Link12">'.'<a class="linkCrud" href="'. $row['link12'] . '">'. $link12 . '</a></td>';
-//echo '<td  data-label="Link13">'.'<a class="linkCrud" href="'. $row['link13'] . '">'. $link13 . '</a></td>';
-//echo '<td  data-label="Link14">'.'<a class="linkCrud" href="'. $row['link14'] . '">'. $link14 . '</a></td>';
-//echo '<td  data-label="Link15">'.'<a class="linkCrud" href="'. $row['link15'] . '">'. $link15 . '</a></td>';
-//echo '<td  data-label="Link16">'.'<a class="linkCrud" href="'. $row['link16'] . '">'. $link16 . '</a></td>';
-//echo '<td  data-label="Link17">'.'<a class="linkCrud" href="'. $row['link17'] . '">'. $link17 . '</a></td>';
-//echo '<td  data-label="Link18">'.'<a class="linkCrud" href="'. $row['link18'] . '">'. $link18 . '</a></td>';
-//echo '<td  data-label="Link19">'.'<a class="linkCrud" href="'. $row['link19'] . '">'. $link19 . '</a></td>';
-//echo '<td  data-label="Link20">'.'<a class="linkCrud" href="'. $row['link20'] . '">'. $link20 . '</a></td>';
-//echo '<td  data-label="Link21">'.'<a class="linkCrud" href="'. $row['link21'] . '">'. $link21 . '</a></td>';
-//echo '<td  data-label="Link22">'.'<a class="linkCrud" href="'. $row['link22'] . '">'. $link22 . '</a></td>';
-//echo '<td  data-label="Link23">'.'<a class="linkCrud" href="'. $row['link23'] . '">'. $link23 . '</a></td>';
-//echo '<td  data-label="Link24">'.'<a class="linkCrud" href="'. $row['link24'] . '">'. $link24 . '</a></td>';
-//echo '<td  data-label="Link25">'.'<a class="linkCrud" href="'. $row['link25'] . '">'. $link25 . '</a></td>';
-//echo '<td  data-label="Link26">'.'<a class="linkCrud" href="'. $row['link26'] . '">'. $link26 . '</a></td>';
-//echo '<td  data-label="Link27">'.'<a class="linkCrud" href="'. $row['link27'] . '">'. $link27 . '</a></td>';
-//echo '<td  data-label="Link28">'.'<a class="linkCrud" href="'. $row['link28'] . '">'. $link28 . '</a></td>';
-//echo '<td  data-label="Link29">'.'<a class="linkCrud" href="'. $row['link29'] . '">'. $link29 . '</a></td>';
-//echo '<td  data-label="Link30">'.'<a class="linkCrud" href="'. $row['link30'] . '">'. $link30 . '</a></td>';
-
-            echo '<td  data-label="crud">';
-            echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
-            //echo ' ';
-            echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
-            //echo ' ';
-            echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
-            echo '</td>';
-            echo '</tr>';
+      echo '<td class="preto"> <h2 class="titulo_jogo">'.$row['titulo'].'</h2>';
+      echo '<p class="textoJogo">'.$row['descricao'].'</p> </a>';
+      echo '<td  data-label="" class="preto">';
+      echo '<a class="botaoIcones" href="read.php?id='.$row['id'].'"><i class="fas fa-info" aria-hidden="true"></i></a>';
+      echo ' ';
+      echo '<a class="botaoIcones" href="update.php?id='.$row['id'].'"><i class="fas fa-pencil-square-o" aria-hidden="true" ></i></a>';
+      echo ' ';
+      echo '<a  class="botaoIcones" href="delete.php?id='.$row['id'].'"><i class="fas fa-trash" aria-hidden="true"></i></a>';
+      echo '</td>';
+      echo '</td> </tr> </table>  ';
         }
-        database::desconectar();
+        Database::desconectar();
         ?>
 
 
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="../../../assets/js/bootstrap.min.js"></script>
-</body>
 
+<!-- final do container-fluid todo conteudo deve ficar antes desta div -->   
+</div></div>
+<footer class="tm-footer text-right" "><font color="#91060d" face="VT323" size="5"><font color="91060d"><b> TCXS Project PlayStation3 Store   |  2020   |   HAN HEN CFW   </b></font></footer> 
+</div>
+</body>
 </html>

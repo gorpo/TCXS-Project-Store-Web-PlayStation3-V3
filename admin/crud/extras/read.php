@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!$_SESSION['nome']) {
+  header('Location: ../../../nao_logado.php');
+  exit();
+}
+
 include '../../../database.php';
 $id = null;
 if (!empty($_GET['id'])) {
