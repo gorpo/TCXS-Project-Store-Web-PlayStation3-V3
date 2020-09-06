@@ -101,6 +101,7 @@ database::desconectar();
 
 
           <div class="barraBase">
+            <div class="blocoDadosInputs">
             <h3 class="tituloRed">[WARNING]<br>Deletar: <?php echo $data['informacao']; ?><br>Informação</h3>
         <form class="form-horizontal" action="delete.php" method="post"  autocomplete="off">
 

@@ -103,6 +103,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $usuario != "") {
           </caption>
 
  <div class="barraCadastro">
+  <div class="blocoDadosInputs">
   <h3 class="tituloRed">Sistema de consulta | Verificar Vazamentos | Insira Usuario.</h3>
 
                     <form action="?act=save" method="POST" name="form1" class="form-horizontal" autocomplete="off">

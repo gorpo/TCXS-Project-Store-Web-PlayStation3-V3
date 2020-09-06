@@ -84,7 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </caption>
 
  <div class="barraCadastro">
-  <h3 class="tituloRed"> SISTEMA DE CADASTRO DE USUÁRIOS NA LOJA</h3>
+  <div class="blocoDadosInputs">
+  <h3 class="tituloRed">CADASTRO DE USUÁRIOS</h3>
 
   <?php
 // Cria a conexão com o banco de dados
@@ -194,7 +195,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "" && $usuari
           <!-- =====   NOME NA LOJA  ======   -->
           <div class="wrap-input100 validate-input m-b-16" >
             <div class="control-group  <?php echo !empty($tituloErro) ? 'error ' : ''; ?>">
-            <label class="titulo">NOME EXIBIÇÃO NA LOJA</label>
+            <label class="titulo">NOME EXIBIÇÃO</label>
              <div class="controls">
             <input class="input100" type="text" name="nome" value="<?php
                                         echo (isset($nome) && ($nome != null || $nome != "")) ? $nome : '';

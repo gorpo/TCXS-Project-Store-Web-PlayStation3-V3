@@ -78,7 +78,7 @@ if($nivel != 'admin') {
                           <span class="linha-menu"></span>
                           <span class="linha-menu"></span>
                         </div>
-                <ul class="list-menu">
+                <ul class="list-menu" >
                           <li class="item-menu"> <a href="cadastro_usuarios.php" class="link-menu">Cadastro Usuarios</a></li>
                           <li class="item-menu"> <a href="consulta_usuarios.php" class="link-menu">Verifica Usuarios</a></li>
                           <li class="item-menu"> <a href="infos/index.php" class="link-menu">PlayStation Infos</a></li>
@@ -93,7 +93,8 @@ if($nivel != 'admin') {
           </caption>
 
         <div class="barraBase">
-          <h2 class="tituloRedHome">Bem vindo <?php echo  $usuario ?> <br> Painel Administrador V:1.0</h2>
+          <div class="blocoDadosInputs">
+          <h2 class="tituloWhiteHome">Bem vindo <?php echo  $usuario ?> <br> Painel Administrador V:1.0</h2>
           <br>
           <a href="cadastro_usuarios.php" type="btn" class="login100-form-btn m-b-16 ">Cadastro Usuarios</a>
           <a href="consulta_usuarios.php" type="btn" class="login100-form-btn m-b-16">Verifica Usuarios</a>

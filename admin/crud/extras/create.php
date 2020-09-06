@@ -258,6 +258,7 @@ if(isset($_POST["submit"])){
     
 
 <div class="barraBase">
+  <div class="blocoDadosInputs">
   <h3 class="tituloRed"> Cadastrar EXTRAS  na Database </h3>
         <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
            <!-- <h3 class="tituloRed"> Adicionar Jogo PSP </h3> -->
@@ -328,7 +329,7 @@ if(isset($_POST["submit"])){
                             ?>
                             <div class="areaBotoesUpload">
                                <!-- GAMBIARRA PARA TIRAR O TEXTO DO BTN UPLOAD E ALICAR CSS  --->
-                              <label  class="login100-form-btn m-b-16" for='selecao-arquivo'>Selecione uma imagem &#187;</label>
+                              <label  class="login100-form-btn m-b-16" for='selecao-arquivo' autofocus>Selecione uma imagem &#187;</label>
                               <input id='selecao-arquivo' type='file'  name="file" >
 
                             <input  class="login100-form-btn m-b-16" type="submit" name="submit" value="Upload"></div>
@@ -362,7 +363,7 @@ if(isset($_POST["submit"])){
                         <label class="titulo">Link do Conteudo</label>
                         <div class="controls">
                             <input class="input100"  name="link" type="text" placeholder="Insira o link"
-                                   value="<?php echo !empty($link) ? $link : ''; ?>" autofocus>
+                                   value="<?php echo !empty($link) ? $link : ''; ?>" >
                             <?php if (!empty($linkErro)): ?>
                                 <span class="text-danger"><?php echo $linkErro; ?></span>
                             <?php endif; ?>

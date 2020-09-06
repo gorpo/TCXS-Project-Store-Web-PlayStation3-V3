@@ -102,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="barraBase">
+  <div class="blocoDadosInputs">
   <h3 class="tituloRed"> Cadastrar INFO da HOME na Database </h3>
         <form class="form-horizontal" action="create.php" method="post"  autocomplete="off" enctype="multipart/form-data">
 

@@ -476,6 +476,7 @@ if (!empty($_POST['link30'])) {
 
 
 <div class="barraBase">
+    <div class="blocoDadosInputs">
     <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['titulo']; ?><br>PlayStation PS3<br>Data Cadastro: <?php echo $data['cadastro']; ?> </h3>
     <form class="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post"  autocomplete="off">
 

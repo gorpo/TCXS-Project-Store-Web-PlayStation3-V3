@@ -32,7 +32,13 @@ background-size: 100%;
   background-color:#000000;
 }
 
+.blocoDadosInputs{
+  display: inline-block; width: 95%; margin: 0 auto; padding: 10px;margin-left: 2.5%;
+  background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
 .titulo {
   font-family: 'Share Tech Mono', sans-serif;
   color: rgb(255, 255, 255);
@@ -44,7 +50,7 @@ background-size: 100%;
 .tituloRed {
   font-family: 'Share Tech Mono', sans-serif;
   font-size: 18px;
-  color: rgb(156, 0, 0);
+  color: #fff;
   text-align: left;
   margin-left: 10px;
   margin-top: 3px;
@@ -68,6 +74,15 @@ background-size: 100%;
   color: rgb(156, 0, 0);
   text-align: center;
 }
+
+
+.tituloWhiteHome {
+  font-family: 'Share Tech Mono', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+}
+
 
 .infoLogin {
   font-family: 'Share Tech Mono', sans-serif;
@@ -106,13 +121,13 @@ background-size: 100%;
 }
 
 label.titulo {
-    color: #370909;
+    color: #fff;
     margin: 50px auto;
     padding: 15px 20px;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Share Tech Mono';
-    font-size: 25px;
+    font-family: 'Share Tech Mono', sans-serif;
+    font-size: 24px;
   
 }
 

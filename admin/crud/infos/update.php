@@ -123,6 +123,7 @@ if (!empty($_POST)) {
 
 
 <div class="barraBase">
+  <div class="blocoDadosInputs">
     <h3 class="tituloRed">[WARNING]<br>Atualizar: <?php echo $data['informacao']; ?><br>PlayStation INFO<br> </h3>
     <form class="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post"  autocomplete="off">
 

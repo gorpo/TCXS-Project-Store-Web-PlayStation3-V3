@@ -76,6 +76,7 @@ if (null == $id) {
 
 
           <div class="barraBase">
+            <div class="blocoDadosInputs">
              <h3 class="tituloRed">[INFORMAÇÕES - APENAS LEITURA]<br>Jogo: <?php echo $data['informacao']; ?><br>Informação </h3>
         <form class="form-horizontal">
 
