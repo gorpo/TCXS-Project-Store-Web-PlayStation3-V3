@@ -11,9 +11,9 @@
 class Database
 {
     private static $dbHost = 'localhost';
-    private static $dbNome = 'u923273795_users';
-    private static $dbUsuario = 'u923273795_users';
-    private static $dbSenha = 'Tcxsproject2020web';
+    private static $dbNome = '';
+    private static $dbUsuario = '';
+    private static $dbSenha = '';
     
     private static $cont = null;
     
